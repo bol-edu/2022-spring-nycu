@@ -1,0 +1,226 @@
+
+
+================================================================
+== Synthesis Summary Report of 'spmv'
+================================================================
++ General Information: 
+    * Date:           Sun Mar 27 02:27:33 2022
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+    * Project:        native_stream
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+--------+-----------+-----------+-----+
+    |           Modules           |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |         |        |           |           |     |
+    |           & Loops           |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP  |     FF    |    LUT    | URAM|
+    +-----------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+--------+-----------+-----------+-----+
+    |+ spmv*                      |  Timing|  -1.54|    13635|  1.364e+05|         -|    13119|     -|  dataflow|  1 (~0%)|  5 (2%)|  1098 (1%)|  1852 (3%)|    -|
+    | + Loop_1_proc               |       -|   1.49|      520|  5.200e+03|         -|      520|     -|        no|        -|       -|   82 (~0%)|  260 (~0%)|    -|
+    |  + Loop_1_proc_Pipeline_1   |       -|   2.39|      258|  2.580e+03|         -|      258|     -|        no|        -|       -|   11 (~0%)|   52 (~0%)|    -|
+    |   o Loop 1                  |       -|   7.30|      256|  2.560e+03|         1|        1|   256|       yes|        -|       -|          -|          -|    -|
+    |  + Loop_1_proc_Pipeline_RS  |       -|   1.49|      259|  2.590e+03|         -|      259|     -|        no|        -|       -|   64 (~0%)|  116 (~0%)|    -|
+    |   o RS                      |       -|   7.30|      257|  2.570e+03|         3|        1|   256|       yes|        -|       -|          -|          -|    -|
+    | + Loop_values_fifo_proc2    |       -|   0.41|     3279|  3.279e+04|         -|     3279|     -|        no|        -|       -|   15 (~0%)|   86 (~0%)|    -|
+    |  o values_fifo              |       -|   7.30|     3277|  3.277e+04|         2|        1|  3277|       yes|        -|       -|          -|          -|    -|
+    | + Loop_rows_fifo_proc1      |       -|   0.41|      258|  2.580e+03|         -|      258|     -|        no|        -|       -|   12 (~0%)|   76 (~0%)|    -|
+    |  o rows_fifo                |       -|   7.30|      256|  2.560e+03|         2|        1|   256|       yes|        -|       -|          -|          -|    -|
+    | + Loop_COM_proc3            |  Timing|  -1.54|    13118|  1.312e+05|         -|    13118|     -|        no|        -|  5 (2%)|  569 (~0%)|  1039 (1%)|    -|
+    |  o COM                      |       -|   7.30|    13116|  1.312e+05|        13|        4|  3277|       yes|        -|       -|          -|          -|    -|
+    | + Loop_Y_proc4              |       -|   0.41|      258|  2.580e+03|         -|      258|     -|        no|        -|       -|   21 (~0%)|   76 (~0%)|    -|
+    |  o Y                        |       -|   7.30|      256|  2.560e+03|         2|        1|   256|       yes|        -|       -|          -|          -|    -|
+    +-----------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+--------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++-----------------+----------+
+| Interface       | Bitwidth |
++-----------------+----------+
+| cols_address0   | 12       |
+| cols_address1   | 12       |
+| cols_d0         | 32       |
+| cols_d1         | 32       |
+| cols_q0         | 32       |
+| cols_q1         | 32       |
+| rowPtr_address0 | 9        |
+| rowPtr_address1 | 9        |
+| rowPtr_d0       | 32       |
+| rowPtr_d1       | 32       |
+| rowPtr_q0       | 32       |
+| rowPtr_q1       | 32       |
+| values_address0 | 12       |
+| values_address1 | 12       |
+| values_d0       | 32       |
+| values_d1       | 32       |
+| values_q0       | 32       |
+| values_q1       | 32       |
+| x_address0      | 8        |
+| x_address1      | 8        |
+| x_d0            | 32       |
+| x_d1            | 32       |
+| x_q0            | 32       |
+| x_q1            | 32       |
+| y_address0      | 8        |
+| y_address1      | 8        |
+| y_d0            | 32       |
+| y_d1            | 32       |
+| y_q0            | 32       |
+| y_q1            | 32       |
++-----------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| rowPtr   | in        | int*     |
+| cols     | in        | int*     |
+| values   | in        | float*   |
+| y        | out       | float*   |
+| x        | in        | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-----------------+---------+----------+
+| Argument | HW Interface    | HW Type | HW Usage |
++----------+-----------------+---------+----------+
+| rowPtr   | rowPtr_address0 | port    | offset   |
+| rowPtr   | rowPtr_ce0      | port    |          |
+| rowPtr   | rowPtr_d0       | port    |          |
+| rowPtr   | rowPtr_q0       | port    |          |
+| rowPtr   | rowPtr_we0      | port    |          |
+| rowPtr   | rowPtr_address1 | port    | offset   |
+| rowPtr   | rowPtr_ce1      | port    |          |
+| rowPtr   | rowPtr_d1       | port    |          |
+| rowPtr   | rowPtr_q1       | port    |          |
+| rowPtr   | rowPtr_we1      | port    |          |
+| cols     | cols_address0   | port    | offset   |
+| cols     | cols_ce0        | port    |          |
+| cols     | cols_d0         | port    |          |
+| cols     | cols_q0         | port    |          |
+| cols     | cols_we0        | port    |          |
+| cols     | cols_address1   | port    | offset   |
+| cols     | cols_ce1        | port    |          |
+| cols     | cols_d1         | port    |          |
+| cols     | cols_q1         | port    |          |
+| cols     | cols_we1        | port    |          |
+| values   | values_address0 | port    | offset   |
+| values   | values_ce0      | port    |          |
+| values   | values_d0       | port    |          |
+| values   | values_q0       | port    |          |
+| values   | values_we0      | port    |          |
+| values   | values_address1 | port    | offset   |
+| values   | values_ce1      | port    |          |
+| values   | values_d1       | port    |          |
+| values   | values_q1       | port    |          |
+| values   | values_we1      | port    |          |
+| y        | y_address0      | port    | offset   |
+| y        | y_ce0           | port    |          |
+| y        | y_d0            | port    |          |
+| y        | y_q0            | port    |          |
+| y        | y_we0           | port    |          |
+| y        | y_address1      | port    | offset   |
+| y        | y_ce1           | port    |          |
+| y        | y_d1            | port    |          |
+| y        | y_q1            | port    |          |
+| y        | y_we1           | port    |          |
+| x        | x_address0      | port    | offset   |
+| x        | x_ce0           | port    |          |
+| x        | x_d0            | port    |          |
+| x        | x_q0            | port    |          |
+| x        | x_we0           | port    |          |
+| x        | x_address1      | port    | offset   |
+| x        | x_ce1           | port    |          |
+| x        | x_d1            | port    |          |
+| x        | x_q1            | port    |          |
+| x        | x_we1           | port    |          |
++----------+-----------------+---------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+------------+------+---------+---------+
+| Name                                  | DSP | Pragma | Variable   | Op   | Impl    | Latency |
++---------------------------------------+-----+--------+------------+------+---------+---------+
+| + spmv                                | 5   |        |            |      |         |         |
+|  + Loop_1_proc                        | 0   |        |            |      |         |         |
+|   + Loop_1_proc_Pipeline_1            | 0   |        |            |      |         |         |
+|     empty_16_fu_56_p2                 | -   |        | empty_16   | add  | fabric  | 0       |
+|   + Loop_1_proc_Pipeline_RS           | 0   |        |            |      |         |         |
+|     add_ln59_fu_95_p2                 | -   |        | add_ln59   | add  | fabric  | 0       |
+|     sub_ln59_fu_117_p2                | -   |        | sub_ln59   | sub  | fabric  | 0       |
+|     add_ln57_fu_106_p2                | -   |        | add_ln57   | add  | fabric  | 0       |
+|  + Loop_values_fifo_proc2             | 0   |        |            |      |         |         |
+|    add_ln19_fu_102_p2                 | -   |        | add_ln19   | add  | fabric  | 0       |
+|  + Loop_rows_fifo_proc1               | 0   |        |            |      |         |         |
+|    add_ln14_fu_75_p2                  | -   |        | add_ln14   | add  | fabric  | 0       |
+|  + Loop_COM_proc3                     | 5   |        |            |      |         |         |
+|    i_5_fu_135_p2                      | -   |        | i_5        | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U13  | 3   |        | mul_i      | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U12 | 2   |        | sum_2      | fadd | fulldsp | 4       |
+|    col_left_3_fu_179_p2               | -   |        | col_left_3 | add  | fabric  | 0       |
+|  + Loop_Y_proc4                       | 0   |        |            |      |         |         |
+|    add_ln45_fu_76_p2                  | -   |        | add_ln45   | add  | fabric  | 0       |
++---------------------------------------+-----+--------+------------+------+---------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++------------------+------+------+--------+--------------+---------+------+---------+
+| Name             | BRAM | URAM | Pragma | Variable     | Storage | Impl | Latency |
++------------------+------+------+--------+--------------+---------+------+---------+
+| + spmv           | 1    | 0    |        |              |         |      |         |
+|   rows_fifo_U    | -    | -    |        | rows_fifo    | fifo    | srl  | 0       |
+|   values_fifo_U  | -    | -    |        | values_fifo  | fifo    | srl  | 0       |
+|   cols_fifo_U    | -    | -    |        | cols_fifo    | fifo    | srl  | 0       |
+|   results_fifo_U | -    | -    |        | results_fifo | fifo    | srl  | 0       |
+|   rows_length_U  | 1    | -    |        | rows_length  | ram_1p  | auto | 1       |
++------------------+------+------+--------+--------------+---------+------+---------+
+
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+-----------------------------------------------------------+
+| Type     | Options | Location                                                  |
++----------+---------+-----------------------------------------------------------+
+| dataflow |         | native_stream/src/spmv_naive_stream.cpp:6 in spmv_kernel  |
+| inline   |         | native_stream/src/spmv_naive_stream.cpp:7 in spmv_kernel  |
+| pipeline |         | native_stream/src/spmv_naive_stream.cpp:15 in spmv_kernel |
+| pipeline |         | native_stream/src/spmv_naive_stream.cpp:20 in spmv_kernel |
+| pipeline | II = 4  | native_stream/src/spmv_naive_stream.cpp:31 in spmv_kernel |
+| pipeline |         | native_stream/src/spmv_naive_stream.cpp:46 in spmv_kernel |
+| dataflow |         | native_stream/src/spmv_naive_stream.cpp:56 in spmv        |
+| pipeline |         | native_stream/src/spmv_naive_stream.cpp:58 in spmv        |
++----------+---------+-----------------------------------------------------------+
+
+

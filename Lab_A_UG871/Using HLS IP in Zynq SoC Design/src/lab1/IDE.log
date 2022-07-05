@@ -1,0 +1,114 @@
+17:12:48 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\wdb87\Documents\LabA\Using_IP_with_Zynq\lab1\temp_xsdb_launch_script.tcl
+17:12:48 INFO  : Platform repository initialization has completed.
+17:12:48 INFO  : Registering command handlers for Vitis TCF services
+17:12:50 INFO  : XSCT server has started successfully.
+17:12:52 INFO  : Successfully done setting XSCT server connection channel  
+17:12:52 INFO  : plnx-install-location is set to ''
+17:12:52 INFO  : Successfully done query RDI_DATADIR 
+17:12:52 INFO  : Successfully done setting workspace for the tool. 
+17:17:22 INFO  : Result from executing command 'getProjects': Zynq_Design_wrapper
+17:17:22 INFO  : Result from executing command 'getPlatforms': 
+17:17:22 WARN  : An unexpected exception occurred in the module 'platform project logging'
+17:17:23 INFO  : Platform 'Zynq_Design_wrapper' is added to custom repositories.
+17:17:29 INFO  : Platform 'Zynq_Design_wrapper' is added to custom repositories.
+21:13:50 INFO  : Launching the emulator on project 'Zynq_Design_Test' for configuration 'Debug'
+21:13:57 ERROR : Failed to start emulator for 'Zynq_Design_Test'.
+Reason: Application executable doesn't exist at 'C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/Zynq_Design_Test/Debug/Zynq_Design_Test.elf'.
+21:13:57 INFO  : The emulator is not running, terminating debug launch configuration
+21:14:25 INFO  : Result from executing command 'getProjects': Zynq_Design_wrapper
+21:14:25 INFO  : Result from executing command 'getPlatforms': Zynq_Design_wrapper|C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/Zynq_Design_wrapper/export/Zynq_Design_wrapper/Zynq_Design_wrapper.xpfm
+21:14:26 INFO  : Checking for BSP changes to sync application flags for project 'Zynq_Design_Test'...
+21:14:42 INFO  : Launching the emulator on project 'Zynq_Design_Test' for configuration 'Debug'
+21:14:42 INFO  : Launching QEMU with command 'launch_emulator.bat -device-family 7series -pid-file emulation.pid -t sw_emu -gdb-port 1137'
+21:14:47 INFO  : Emulator has started.
+21:14:48 INFO  : XRT server required for baremetal application debugging on QEMU has started successfully on port '4352'.
+21:14:48 INFO  : 'connect -url tcp:localhost:4352' command is executed.
+21:14:48 INFO  : 'gdbremote connect localhost:1137' command is executed.
+21:14:48 INFO  : Connected to target on host 'localhost' and port '4352'.
+21:14:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:14:49 INFO  : The application 'C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/Zynq_Design_Test/Debug/Zynq_Design_Test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:14:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:localhost:4352
+targets 3
+dow C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/Zynq_Design_Test/Debug/Zynq_Design_Test.elf
+----------------End of Script----------------
+
+21:14:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:14:49 INFO  : 'con' command is executed.
+21:14:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets 3
+con
+----------------End of Script----------------
+
+21:14:49 INFO  : Launch script is exported to file 'C:\Users\wdb87\Documents\LabA\Using_IP_with_Zynq\lab1\Zynq_Design_Test_system\_ide\scripts\debugger_zynq_design_test-emulation.tcl'
+21:15:35 INFO  : Checking for BSP changes to sync application flags for project 'Zynq_Design_Test'...
+21:15:46 INFO  : Disconnected from the channel tcfchan#2.
+21:15:48 INFO  : Stopping the emulator on project 'Zynq_Design_Test' for configuration 'Debug'
+21:16:02 ERROR : Pid file required for stopping the emulator is not created at 'C:\Users\wdb87\Documents\LabA\Using_IP_with_Zynq\lab1\Zynq_Design_Test\Debug\emulation.pid'.
+21:16:02 INFO  : Terminating XRT server used for debugging baremetal applications on QEMU.
+21:16:02 ERROR : Failed to stop the emulator.
+21:16:07 INFO  : Emulator has terminated.
+21:16:07 INFO  : Launching the emulator on project 'Zynq_Design_Test' for configuration 'Debug'
+21:16:07 INFO  : Launching QEMU with command 'launch_emulator.bat -device-family 7series -pid-file emulation.pid -t sw_emu -gdb-port 1137'
+21:16:11 INFO  : Emulator has started.
+21:16:12 INFO  : XRT server required for baremetal application debugging on QEMU has started successfully on port '4351'.
+21:16:12 INFO  : 'connect -url tcp:localhost:4351' command is executed.
+21:16:12 INFO  : 'gdbremote connect localhost:1137' command is executed.
+21:16:12 INFO  : Connected to target on host 'localhost' and port '4351'.
+21:16:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:16:12 INFO  : The application 'C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/Zynq_Design_Test/Debug/Zynq_Design_Test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:16:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:localhost:4351
+targets 3
+dow C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/Zynq_Design_Test/Debug/Zynq_Design_Test.elf
+----------------End of Script----------------
+
+21:16:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:16:13 INFO  : 'con' command is executed.
+21:16:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets 3
+con
+----------------End of Script----------------
+
+21:16:13 INFO  : Launch script is exported to file 'C:\Users\wdb87\Documents\LabA\Using_IP_with_Zynq\lab1\Zynq_Design_Test_system\_ide\scripts\debugger_zynq_design_test-emulation.tcl'
+21:16:43 INFO  : Result from executing command 'removePlatformRepo': 
+21:16:59 INFO  : Result from executing command 'getProjects': Zynq_Design_wrapper
+21:16:59 INFO  : Result from executing command 'getPlatforms': 
+21:16:59 INFO  : Checking for BSP changes to sync application flags for project 'Zynq_Design_Test'...
+21:17:08 INFO  : Disconnected from the channel tcfchan#3.
+21:17:10 INFO  : Stopping the emulator on project 'Zynq_Design_Test' for configuration 'Debug'
+21:17:23 ERROR : Pid file required for stopping the emulator is not created at 'C:\Users\wdb87\Documents\LabA\Using_IP_with_Zynq\lab1\Zynq_Design_Test\Debug\emulation.pid'.
+21:17:23 INFO  : Terminating XRT server used for debugging baremetal applications on QEMU.
+21:17:23 ERROR : Failed to stop the emulator.
+21:17:29 INFO  : Emulator has terminated.
+21:17:29 INFO  : Launching the emulator on project 'Zynq_Design_Test' for configuration 'Debug'
+21:17:29 INFO  : Launching QEMU with command 'launch_emulator.bat -device-family 7series -pid-file emulation.pid -t sw_emu -gdb-port 1137'
+21:17:33 INFO  : Emulator has started.
+21:17:34 INFO  : XRT server required for baremetal application debugging on QEMU has started successfully on port '4355'.
+21:17:34 INFO  : 'connect -url tcp:localhost:4355' command is executed.
+21:17:34 INFO  : 'gdbremote connect localhost:1137' command is executed.
+21:17:34 INFO  : Connected to target on host 'localhost' and port '4355'.
+21:17:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:17:34 INFO  : The application 'C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/Zynq_Design_Test/Debug/Zynq_Design_Test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:17:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:localhost:4355
+targets 3
+dow C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/Zynq_Design_Test/Debug/Zynq_Design_Test.elf
+----------------End of Script----------------
+
+21:17:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:17:35 INFO  : 'con' command is executed.
+21:17:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets 3
+con
+----------------End of Script----------------
+
+21:17:35 INFO  : Launch script is exported to file 'C:\Users\wdb87\Documents\LabA\Using_IP_with_Zynq\lab1\Zynq_Design_Test_system\_ide\scripts\debugger_zynq_design_test-emulation.tcl'
+21:25:06 INFO  : Checking for BSP changes to sync application flags for project 'Zynq_Design_Test'...
+21:25:31 INFO  : Checking for BSP changes to sync application flags for project 'Zynq_Design_Test'...
+11:28:17 INFO  : Terminating XRT server used for debugging baremetal applications on QEMU.
+11:28:17 INFO  : Stopping the emulator on project 'Zynq_Design_Test' for configuration 'Debug'
+11:28:17 INFO  : Disconnected from the channel tcfchan#6.
+11:28:32 ERROR : Pid file required for stopping the emulator is not created at 'C:\Users\wdb87\Documents\LabA\Using_IP_with_Zynq\lab1\Zynq_Design_Test\Debug\emulation.pid'.
+11:28:32 ERROR : Failed to stop the emulator.
+11:28:37 INFO  : Emulator has terminated.

@@ -1,0 +1,38 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.21659",
+   "Default View_TopLeft":"276,-667",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 4 -x 1550 -y -120 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 3 -x 990 -y -420 -defaultsOSRD
+preplace inst axi_dma_1 -pg 1 -lvl 2 -x 580 -y -470 -defaultsOSRD
+preplace inst stereolbm_accel_0 -pg 1 -lvl 1 -x 160 -y -440 -defaultsOSRD
+preplace inst ps8_0_axi_periph -pg 1 -lvl 6 -x 2480 -y -510 -defaultsOSRD
+preplace inst rst_ps8_0_99M -pg 1 -lvl 5 -x 2070 -y -50 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 6 -x 2480 -y -230 -defaultsOSRD
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 6 -60 -330 330 -350 760 -270 1170 -230 1880 -230 2330
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 4 1 1860 -120n
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 0 6 -50 -340 350 -340 770 -290 1190J -270 NJ -270 2300
+preplace netloc stereolbm_accel_0_interrupt 1 1 3 340J -280 NJ -280 1180
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 4 2 1860J -630 2330
+preplace netloc ps8_0_axi_periph_M00_AXI 1 2 5 780 -260 NJ -260 NJ -260 2280J -110 2660
+preplace netloc ps8_0_axi_periph_M01_AXI 1 1 6 360 -240 NJ -240 NJ -240 NJ -240 2260J -100 2650
+preplace netloc ps8_0_axi_periph_M02_AXI 1 0 7 -70 -250 NJ -250 NJ -250 NJ -250 1870J -210 2250J -90 2640
+preplace netloc axi_dma_0_M_AXI_MM2S 1 3 3 1200 -280 NJ -280 NJ
+preplace netloc axi_smc_M00_AXI 1 3 4 1200 -220 NJ -220 2270J -120 2630
+preplace netloc axi_dma_0_M_AXI_SG 1 3 3 NJ -480 NJ -480 2310
+preplace netloc axi_dma_1_M_AXI_MM2S 1 2 4 770J -550 NJ -550 NJ -550 2320
+preplace netloc axi_dma_1_M_AXI_SG 1 2 4 780J -540 NJ -540 NJ -540 2290
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM1_FPD 1 4 2 1890 -620 NJ
+preplace netloc axi_dma_1_M_AXIS_MM2S 1 0 3 -50 -590 N -590 760
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 0 4 -60 -600 N -600 N -600 1190
+levelinfo -pg 1 -90 160 580 990 1550 2070 2480 2680
+pagesize -pg 1 -db -bbox -sgen -90 -700 2680 180
+"
+}
+{
+   "da_axi4_cnt":"9",
+   "da_zynq_ultra_ps_e_cnt":"1"
+}

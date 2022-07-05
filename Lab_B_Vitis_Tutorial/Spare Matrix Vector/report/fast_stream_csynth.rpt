@@ -1,0 +1,200 @@
+
+
+================================================================
+== Synthesis Summary Report of 'spmv'
+================================================================
++ General Information: 
+    * Date:           Sun Mar 27 16:50:11 2022
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+    * Project:        fast_stream
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+--------+--------+-----------+-----------+-----+
+    |                    Modules                   |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |        |        |           |           |     |
+    |                    & Loops                   |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM  |   DSP  |     FF    |    LUT    | URAM|
+    +----------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+--------+--------+-----------+-----------+-----+
+    |+ spmv                                        |  Timing|  -1.12|        -|          -|         -|        -|     -|        no|  3 (1%)|  5 (2%)|  2438 (2%)|  3321 (6%)|    -|
+    | + spmv_Pipeline_1                            |       -|   2.39|      258|  2.580e+03|         -|      258|     -|        no|       -|       -|   11 (~0%)|   52 (~0%)|    -|
+    |  o Loop 1                                    |       -|   7.30|      256|  2.560e+03|         1|        1|   256|       yes|       -|       -|          -|          -|    -|
+    | + spmv_Pipeline_VITIS_LOOP_76_1              |       -|   1.49|      259|  2.590e+03|         -|      259|     -|        no|       -|       -|   64 (~0%)|  116 (~0%)|    -|
+    |  o VITIS_LOOP_76_1                           |       -|   7.30|      257|  2.570e+03|         3|        1|   256|       yes|       -|       -|          -|          -|    -|
+    | + spmv_Pipeline_VITIS_LOOP_83_2              |       -|   0.29|      260|  2.600e+03|         -|      260|     -|        no|       -|       -|  197 (~0%)|  352 (~0%)|    -|
+    |  o VITIS_LOOP_83_2                           |       -|   7.30|      258|  2.580e+03|         4|        1|   256|       yes|       -|       -|          -|          -|    -|
+    | + spmv_kernel*                               |  Timing|  -1.12|        -|          -|         -|        -|     -|  dataflow|       -|  5 (2%)|  2152 (2%)|  2616 (4%)|    -|
+    |  + spmv_kernel_Loop_FIFO_proc2               |       -|   0.41|     3279|  3.279e+04|         -|     3279|     -|        no|       -|       -|   15 (~0%)|   86 (~0%)|    -|
+    |   o FIFO                                     |       -|   7.30|     3277|  3.277e+04|         2|        1|  3277|       yes|       -|       -|          -|          -|    -|
+    |  + spmv_kernel_Loop_COM_proc3                |  Timing|  -1.12|        -|          -|         -|        -|     -|        no|       -|  5 (2%)|  1818 (1%)|  2220 (4%)|    -|
+    |   + spmv_kernel_Loop_COM_proc3_Pipeline_COM  |  Timing|  -1.12|        -|          -|         -|        -|     -|        no|       -|  5 (2%)|  1752 (1%)|  1978 (3%)|    -|
+    |    o COM                                     |      II|   7.30|        -|          -|        42|        6|     -|       yes|       -|       -|          -|          -|    -|
+    |  + spmv_kernel_Loop_Y_proc4                  |       -|   0.41|      258|  2.580e+03|         -|      258|     -|        no|       -|       -|   20 (~0%)|   76 (~0%)|    -|
+    |   o Y                                        |       -|   7.30|      256|  2.560e+03|         2|        1|   256|       yes|       -|       -|          -|          -|    -|
+    +----------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+--------+--------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++-----------------+----------+
+| Interface       | Bitwidth |
++-----------------+----------+
+| cols_address0   | 12       |
+| cols_q0         | 32       |
+| rowPtr_address0 | 9        |
+| rowPtr_address1 | 9        |
+| rowPtr_q0       | 32       |
+| rowPtr_q1       | 32       |
+| values_address0 | 12       |
+| values_q0       | 32       |
+| x_address0      | 8        |
+| x_q0            | 32       |
+| y_address0      | 8        |
+| y_d0            | 32       |
++-----------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| rowPtr   | in        | int*     |
+| cols     | in        | int*     |
+| values   | in        | float*   |
+| y        | out       | float*   |
+| x        | in        | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-----------------+---------+----------+
+| Argument | HW Interface    | HW Type | HW Usage |
++----------+-----------------+---------+----------+
+| rowPtr   | rowPtr_address0 | port    | offset   |
+| rowPtr   | rowPtr_ce0      | port    |          |
+| rowPtr   | rowPtr_q0       | port    |          |
+| rowPtr   | rowPtr_address1 | port    | offset   |
+| rowPtr   | rowPtr_ce1      | port    |          |
+| rowPtr   | rowPtr_q1       | port    |          |
+| cols     | cols_address0   | port    | offset   |
+| cols     | cols_ce0        | port    |          |
+| cols     | cols_q0         | port    |          |
+| values   | values_address0 | port    | offset   |
+| values   | values_ce0      | port    |          |
+| values   | values_q0       | port    |          |
+| y        | y_address0      | port    | offset   |
+| y        | y_ce0           | port    |          |
+| y        | y_we0           | port    |          |
+| y        | y_d0            | port    |          |
+| x        | x_address0      | port    | offset   |
+| x        | x_ce0           | port    |          |
+| x        | x_q0            | port    |          |
++----------+-----------------+---------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------------+-----+--------+------------------+------+---------+---------+
+| Name                                         | DSP | Pragma | Variable         | Op   | Impl    | Latency |
++----------------------------------------------+-----+--------+------------------+------+---------+---------+
+| + spmv                                       | 5   |        |                  |      |         |         |
+|  + spmv_Pipeline_1                           | 0   |        |                  |      |         |         |
+|    empty_19_fu_56_p2                         | -   |        | empty_19         | add  | fabric  | 0       |
+|  + spmv_Pipeline_VITIS_LOOP_76_1             | 0   |        |                  |      |         |         |
+|    add_ln78_fu_95_p2                         | -   |        | add_ln78         | add  | fabric  | 0       |
+|    sub_ln78_fu_117_p2                        | -   |        | sub_ln78         | sub  | fabric  | 0       |
+|    add_ln76_fu_106_p2                        | -   |        | add_ln76         | add  | fabric  | 0       |
+|  + spmv_Pipeline_VITIS_LOOP_83_2             | 0   |        |                  |      |         |         |
+|    add_ln83_fu_117_p2                        | -   |        | add_ln83         | add  | fabric  | 0       |
+|    sub_ln86_fu_146_p2                        | -   |        | sub_ln86         | sub  | fabric  | 0       |
+|    sub_ln86_1_fu_165_p2                      | -   |        | sub_ln86_1       | sub  | fabric  | 0       |
+|    sub_ln91_fu_191_p2                        | -   |        | sub_ln91         | sub  | fabric  | 0       |
+|    add_ln91_fu_200_p2                        | -   |        | add_ln91         | add  | fabric  | 0       |
+|    new_nnz_3_fu_206_p2                       | -   |        | new_nnz_3        | add  | fabric  | 0       |
+|    new_nnz_2_fu_217_p2                       | -   |        | new_nnz_2        | add  | fabric  | 0       |
+|    new_nnz_1_fu_227_p2                       | -   |        | new_nnz_1        | add  | fabric  | 0       |
+|  + spmv_kernel                               | 5   |        |                  |      |         |         |
+|   + spmv_kernel_Loop_FIFO_proc2              | 0   |        |                  |      |         |         |
+|     add_ln27_fu_102_p2                       | -   |        | add_ln27         | add  | fabric  | 0       |
+|   + spmv_kernel_Loop_COM_proc3               | 5   |        |                  |      |         |         |
+|     new_nnz_op_op_fu_81_p2                   | -   |        | new_nnz_op_op    | add  | fabric  | 0       |
+|     p_neg_fu_95_p2                           | -   |        | p_neg            | sub  | fabric  | 0       |
+|     p_neg_t_fu_111_p2                        | -   |        | p_neg_t          | sub  | fabric  | 0       |
+|    + spmv_kernel_Loop_COM_proc3_Pipeline_COM | 5   |        |                  |      |         |         |
+|      k_1_fu_298_p2                           | -   |        | k_1              | add  | fabric  | 0       |
+|      row_counter_2_fu_354_p2                 | -   |        | row_counter_2    | add  | fabric  | 0       |
+|      fmul_32ns_32ns_32_4_max_dsp_1_U12       | 3   |        | term             | fmul | maxdsp  | 3       |
+|      fadd_32ns_32ns_32_5_full_dsp_1_U11      | 2   |        | phitmp           | fadd | fulldsp | 4       |
+|      row_counter_3_fu_366_p2                 | -   |        | row_counter_3    | add  | fabric  | 0       |
+|      fmul_32ns_32ns_32_4_max_dsp_1_U12       | 3   |        | term_1           | fmul | maxdsp  | 3       |
+|      row_counter_4_fu_378_p2                 | -   |        | row_counter_4    | add  | fabric  | 0       |
+|      fmul_32ns_32ns_32_4_max_dsp_1_U12       | 3   |        | term_3           | fmul | maxdsp  | 3       |
+|      row_counter_5_fu_390_p2                 | -   |        | row_counter_5    | add  | fabric  | 0       |
+|      fmul_32ns_32ns_32_4_max_dsp_1_U12       | 3   |        | term_5           | fmul | maxdsp  | 3       |
+|      fadd_32ns_32ns_32_5_full_dsp_1_U11      | 2   |        | sum_tmp_1        | fadd | fulldsp | 4       |
+|      fadd_32ns_32ns_32_5_full_dsp_1_U11      | 2   |        | sum_tmp_2        | fadd | fulldsp | 4       |
+|      fadd_32ns_32ns_32_5_full_dsp_1_U11      | 2   |        | sum_tmp_3        | fadd | fulldsp | 4       |
+|      fadd_32ns_32ns_32_5_full_dsp_1_U11      | 2   |        | sum_2            | fadd | fulldsp | 4       |
+|      row_length_pad_3_fu_417_p2              | -   |        | row_length_pad_3 | add  | fabric  | 0       |
+|      i_4_fu_312_p2                           | -   |        | i_4              | add  | fabric  | 0       |
+|   + spmv_kernel_Loop_Y_proc4                 | 0   |        |                  |      |         |         |
+|     add_ln65_fu_76_p2                        | -   |        | add_ln65         | add  | fabric  | 0       |
++----------------------------------------------+-----+--------+------------------+------+---------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++---------------------+------+------+--------+-----------------+---------+------+---------+
+| Name                | BRAM | URAM | Pragma | Variable        | Storage | Impl | Latency |
++---------------------+------+------+--------+-----------------+---------+------+---------+
+| + spmv              | 3    | 0    |        |                 |         |      |         |
+|   rows_length_U     | 2    | -    |        | rows_length     | ram_1p  | auto | 1       |
+|   rows_length_pad_U | 2    | -    |        | rows_length_pad | ram_t2p | auto | 1       |
+|  + spmv_kernel      | 0    | 0    |        |                 |         |      |         |
+|    values_fifo_U    | -    | -    |        | values_fifo     | fifo    | srl  | 0       |
+|    cols_fifo_U      | -    | -    |        | cols_fifo       | fifo    | srl  | 0       |
+|    results_fifo_U   | -    | -    |        | results_fifo    | fifo    | srl  | 0       |
++---------------------+------+------+--------+-----------------+---------+------+---------+
+
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+--------------------------------------------------------+
+| Type     | Options | Location                                               |
++----------+---------+--------------------------------------------------------+
+| dataflow |         | fast_stream/src/spmv_fast_stream.cpp:15 in spmv_kernel |
+| pipeline |         | fast_stream/src/spmv_fast_stream.cpp:28 in spmv_kernel |
+| pipeline |         | fast_stream/src/spmv_fast_stream.cpp:34 in spmv_kernel |
+| pipeline |         | fast_stream/src/spmv_fast_stream.cpp:66 in spmv_kernel |
+| pipeline |         | fast_stream/src/spmv_fast_stream.cpp:77 in spmv        |
+| pipeline |         | fast_stream/src/spmv_fast_stream.cpp:84 in spmv        |
++----------+---------+--------------------------------------------------------+
+
+

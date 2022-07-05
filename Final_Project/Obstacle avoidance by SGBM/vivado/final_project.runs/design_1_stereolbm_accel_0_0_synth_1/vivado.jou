@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Jun 22 01:13:06 2022
+# Process ID: 1458380
+# Current directory: /home/joinet/HLS/final_project/final_project.runs/design_1_stereolbm_accel_0_0_synth_1
+# Command line: vivado -log design_1_stereolbm_accel_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_stereolbm_accel_0_0.tcl
+# Log file: /home/joinet/HLS/final_project/final_project.runs/design_1_stereolbm_accel_0_0_synth_1/design_1_stereolbm_accel_0_0.vds
+# Journal file: /home/joinet/HLS/final_project/final_project.runs/design_1_stereolbm_accel_0_0_synth_1/vivado.jou
+# Running On: buyatti, OS: Linux, CPU Frequency: 4413.284 MHz, CPU Physical cores: 24, Host memory: 67338 MB
+#-----------------------------------------------------------
+source design_1_stereolbm_accel_0_0.tcl -notrace

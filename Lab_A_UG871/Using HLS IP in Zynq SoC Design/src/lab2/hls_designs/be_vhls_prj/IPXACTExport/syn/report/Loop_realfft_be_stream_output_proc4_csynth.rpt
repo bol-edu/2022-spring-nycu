@@ -1,0 +1,165 @@
+
+
+================================================================
+== Vitis HLS Report for 'Loop_realfft_be_stream_output_proc4'
+================================================================
+* Date:           Sat Mar 26 21:16:48 2022
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+* Project:        be_vhls_prj
+* Solution:       IPXACTExport (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  1.823 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                 Pipeline                 |
+    |   min   |   max   |    min   |    max   | min | max |                   Type                   |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------+
+    |      514|      515|  2.056 us|  2.060 us|  512|  512|  loop rewind stp(delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                            |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |          Loop Name         |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- realfft_be_stream_output  |      514|      514|         4|          1|          1|   512|       yes|
+        +----------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     37|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    105|    -|
+|Register         |        -|    -|     218|     64|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     218|    206|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |i_fu_98_p2                        |         +|   0|  0|  14|           9|           1|
+    |ap_condition_91                   |       and|   0|  0|   2|           1|           1|
+    |dout_val_last_V_fu_104_p2         |      icmp|   0|  0|  11|           9|           2|
+    |ap_block_pp0_stage0_01001         |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1                   |        or|   0|  0|   2|           1|           1|
+    |ap_block_state3_pp0_stage0_iter1  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state5_pp0_stage0_iter3  |        or|   0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |       xor|   0|  0|   2|           1|           2|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0|  37|          24|          10|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------------+----+-----------+-----+-----------+
+    |                     Name                    | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                    |  14|          3|    1|          3|
+    |ap_done                                      |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1                      |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter3                      |   9|          2|    1|          2|
+    |ap_phi_mux_dout_val_i_0_0_0_in_phi_fu_84_p4  |  14|          3|   32|         96|
+    |ap_phi_mux_i1_phi_fu_71_p6                   |  14|          3|    9|         27|
+    |dout_TDATA_blk_n                             |   9|          2|    1|          2|
+    |i1_reg_67                                    |   9|          2|    9|         18|
+    |real_spectrum_hi_i_blk_n                     |   9|          2|    1|          2|
+    |real_spectrum_lo_i_blk_n                     |   9|          2|    1|          2|
+    +---------------------------------------------+----+-----------+-----+-----------+
+    |Total                                        | 105|         23|   57|        156|
+    +---------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------+----+----+-----+-----------+
+    |               Name              | FF | LUT| Bits| Const Bits|
+    +---------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                        |   2|   0|    2|          0|
+    |ap_done_reg                      |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1          |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2          |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3          |   1|   0|    1|          0|
+    |dout_val_last_V_reg_133          |   1|   0|    1|          0|
+    |i1_reg_67                        |   9|   0|    9|          0|
+    |i_reg_128                        |   9|   0|    9|          0|
+    |real_spectrum_hi_i_read_reg_143  |  32|   0|   32|          0|
+    |real_spectrum_lo_i_read_reg_138  |  32|   0|   32|          0|
+    |tmp_1_reg_124                    |   1|   0|    1|          0|
+    |dout_val_last_V_reg_133          |  64|  32|    1|          0|
+    |tmp_1_reg_124                    |  64|  32|    1|          0|
+    +---------------------------------+----+----+-----+-----------+
+    |Total                            | 218|  64|   92|          0|
+    +---------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+-------------------------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |            Source Object            |    C Type    |
++----------------------------+-----+-----+------------+-------------------------------------+--------------+
+|ap_clk                      |   in|    1|  ap_ctrl_hs|  Loop_realfft_be_stream_output_proc4|  return value|
+|ap_rst                      |   in|    1|  ap_ctrl_hs|  Loop_realfft_be_stream_output_proc4|  return value|
+|ap_start                    |   in|    1|  ap_ctrl_hs|  Loop_realfft_be_stream_output_proc4|  return value|
+|ap_done                     |  out|    1|  ap_ctrl_hs|  Loop_realfft_be_stream_output_proc4|  return value|
+|ap_continue                 |   in|    1|  ap_ctrl_hs|  Loop_realfft_be_stream_output_proc4|  return value|
+|ap_idle                     |  out|    1|  ap_ctrl_hs|  Loop_realfft_be_stream_output_proc4|  return value|
+|ap_ready                    |  out|    1|  ap_ctrl_hs|  Loop_realfft_be_stream_output_proc4|  return value|
+|real_spectrum_lo_i_dout     |   in|   32|     ap_fifo|                   real_spectrum_lo_i|       pointer|
+|real_spectrum_lo_i_empty_n  |   in|    1|     ap_fifo|                   real_spectrum_lo_i|       pointer|
+|real_spectrum_lo_i_read     |  out|    1|     ap_fifo|                   real_spectrum_lo_i|       pointer|
+|real_spectrum_hi_i_dout     |   in|   32|     ap_fifo|                   real_spectrum_hi_i|       pointer|
+|real_spectrum_hi_i_empty_n  |   in|    1|     ap_fifo|                   real_spectrum_hi_i|       pointer|
+|real_spectrum_hi_i_read     |  out|    1|     ap_fifo|                   real_spectrum_hi_i|       pointer|
+|dout_TREADY                 |   in|    1|        axis|                                 dout|       pointer|
+|dout_TDATA                  |  out|   48|        axis|                                 dout|       pointer|
+|dout_TVALID                 |  out|    1|        axis|                                 dout|       pointer|
++----------------------------+-----+-----+------------+-------------------------------------+--------------+
+

@@ -1,0 +1,28 @@
+   Build using "C:/Xilinx/Vitis_HLS/2021.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling apatb_hls_macc.cpp
+   Compiling (apcc) hls_macc.c_pre.c.tb.c
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'wdb87' on host 'desktop-jelosf8' (Windows NT_amd64 version 6.2) on Sat Mar 26 16:39:15 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/hls_macc/vhls_prj/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 1.639 seconds; peak allocated memory: 2.203 MB.
+   Compiling (apcc) hls_macc_test.c_pre.c.tb.c
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'wdb87' on host 'desktop-jelosf8' (Windows NT_amd64 version 6.2) on Sat Mar 26 16:39:17 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/hls_macc/vhls_prj/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/hls_macc/hls_macc_test.c:55:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 0 seconds. Total elapsed time: 1.596 seconds; peak allocated memory: 2.102 MB.
+   Compiling apatb_hls_macc_ir.ll
+   Generating cosim.tv.exe

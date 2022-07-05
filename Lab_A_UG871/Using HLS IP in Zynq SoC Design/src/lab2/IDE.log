@@ -1,0 +1,46 @@
+22:19:01 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\wdb87\Documents\LabA\Using_IP_with_Zynq\lab2\temp_xsdb_launch_script.tcl
+22:19:01 INFO  : Platform repository initialization has completed.
+22:19:01 INFO  : Registering command handlers for Vitis TCF services
+22:19:03 INFO  : XSCT server has started successfully.
+22:19:04 INFO  : Successfully done setting XSCT server connection channel  
+22:19:04 INFO  : plnx-install-location is set to ''
+22:19:04 INFO  : Successfully done query RDI_DATADIR 
+22:19:04 INFO  : Successfully done setting workspace for the tool. 
+22:29:16 INFO  : Result from executing command 'getProjects': Zynq_RealFFT_wrapper
+22:29:16 INFO  : Result from executing command 'getPlatforms': 
+22:29:16 WARN  : An unexpected exception occurred in the module 'platform project logging'
+22:29:16 INFO  : Platform 'Zynq_RealFFT_wrapper' is added to custom repositories.
+22:29:22 INFO  : Platform 'Zynq_RealFFT_wrapper' is added to custom repositories.
+21:24:10 INFO  : Result from executing command 'getProjects': Zynq_RealFFT_wrapper
+21:24:10 INFO  : Result from executing command 'getPlatforms': Zynq_RealFFT_wrapper|C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/Zynq_RealFFT_wrapper/export/Zynq_RealFFT_wrapper/Zynq_RealFFT_wrapper.xpfm
+21:24:10 INFO  : Checking for BSP changes to sync application flags for project 'Zynq_RealFFT_Test'...
+21:24:16 INFO  : Checking for BSP changes to sync application flags for project 'Zynq_RealFFT_Test'...
+21:24:27 INFO  : Launching the emulator on project 'Zynq_RealFFT_Test' for configuration 'Debug'
+21:24:27 INFO  : Launching QEMU with command 'launch_emulator.bat -device-family 7series -pid-file emulation.pid -t sw_emu -gdb-port 1144'
+21:24:32 INFO  : Emulator has started.
+21:24:33 INFO  : XRT server required for baremetal application debugging on QEMU has started successfully on port '4354'.
+21:24:33 INFO  : 'connect -url tcp:localhost:4354' command is executed.
+21:24:33 INFO  : 'gdbremote connect localhost:1144' command is executed.
+21:24:33 INFO  : Connected to target on host 'localhost' and port '4354'.
+21:24:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:24:33 INFO  : The application 'C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/Zynq_RealFFT_Test/Debug/Zynq_RealFFT_Test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:24:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:localhost:4354
+targets 3
+dow C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/Zynq_RealFFT_Test/Debug/Zynq_RealFFT_Test.elf
+----------------End of Script----------------
+
+21:24:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:24:34 INFO  : 'con' command is executed.
+21:24:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets 3
+con
+----------------End of Script----------------
+
+21:24:34 INFO  : Launch script is exported to file 'C:\Users\wdb87\Documents\LabA\Using_IP_with_Zynq\lab2\Zynq_RealFFT_Test_system\_ide\scripts\debugger_zynq_realfft_test-emulation.tcl'
+21:29:00 INFO  : Terminating XRT server used for debugging baremetal applications on QEMU.
+21:29:00 INFO  : Stopping the emulator on project 'Zynq_RealFFT_Test' for configuration 'Debug'
+21:29:00 INFO  : Disconnected from the channel tcfchan#3.
+21:29:13 ERROR : Pid file required for stopping the emulator is not created at 'C:\Users\wdb87\Documents\LabA\Using_IP_with_Zynq\lab2\Zynq_RealFFT_Test\Debug\emulation.pid'.
+21:29:13 ERROR : Failed to stop the emulator.
+21:29:18 INFO  : Emulator has terminated.

@@ -1,0 +1,179 @@
+
+
+================================================================
+== Vitis HLS Report for 'Loop_sliding_win_output_proc2'
+================================================================
+* Date:           Sat Mar 26 21:15:22 2022
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+* Project:        fe_vhls_prj
+* Solution:       IPXACTExport (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  1.731 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                 Pipeline                 |
+    |   min   |   max   |    min   |    max   | min | max |                   Type                   |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------+
+    |      514|      515|  2.056 us|  2.060 us|  512|  512|  loop rewind stp(delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                      |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |       Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- sliding_win_output  |      514|      514|         4|          1|          1|   512|       yes|
+        +----------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 4, States = { 2 3 4 5 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %delayed_V_1, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %delayed_V, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %nodelay_V_1, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %nodelay_V, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (1.58ns)   --->   "%br_ln83 = br void %.split1" [./sliding_win.h:83]   --->   Operation 10 'br' 'br_ln83' <Predicate = true> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 1.73>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%i9 = phi i10 0, void %newFuncRoot, i10 %trunc_ln83, void %arrayidx17.i1.1.case.1, i10 0, void %_Z19sliding_win_1in2outI8ap_fixedILi16ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EELi1024EEvRN3hls6streamIT_Li0EEEPS6_.exit.exitStub" [./sliding_win.h:83]   --->   Operation 11 'phi' 'i9' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%i9_cast = zext i10 %i9" [./sliding_win.h:83]   --->   Operation 12 'zext' 'i9_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i10.i32, i10 %i9, i32 9" [./sliding_win.h:87]   --->   Operation 13 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i9 @_ssdm_op_PartSelect.i9.i10.i32.i32, i10 %i9, i32 1, i32 9" [./sliding_win.h:92]   --->   Operation 14 'partselect' 'lshr_ln' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%br_ln87 = br i1 %tmp, void %arrayidx17.i1.case.0, void %arrayidx17.i1.case.0.thread" [./sliding_win.h:87]   --->   Operation 15 'br' 'br_ln87' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (1.73ns)   --->   "%i = add i11 %i9_cast, i11 2" [./sliding_win.h:83]   --->   Operation 16 'add' 'i' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%trunc_ln83 = trunc i11 %i" [./sliding_win.h:83]   --->   Operation 17 'trunc' 'trunc_ln83' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i11.i32, i11 %i, i32 10" [./sliding_win.h:83]   --->   Operation 18 'bitselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%br_ln83 = br i1 %tmp_1, void %.split1, void %_Z19sliding_win_1in2outI8ap_fixedILi16ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EELi1024EEvRN3hls6streamIT_Li0EEEPS6_.exit.exitStub" [./sliding_win.h:83]   --->   Operation 19 'br' 'br_ln83' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.split1"   --->   Operation 20 'br' 'br_ln0' <Predicate = (tmp_1)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.46>
+ST_3 : Operation 21 [1/1] (1.46ns)   --->   "%delayed_V_read = read i16 @_ssdm_op_Read.ap_fifo.volatile.i16P0A, i16 %delayed_V" [./sliding_win.h:88]   --->   Operation 21 'read' 'delayed_V_read' <Predicate = (!tmp)> <Delay = 1.46> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.53> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 256> <FIFO>
+ST_3 : Operation 22 [1/1] (1.46ns)   --->   "%delayed_V_1_read = read i16 @_ssdm_op_Read.ap_fifo.volatile.i16P0A, i16 %delayed_V_1" [./sliding_win.h:88]   --->   Operation 22 'read' 'delayed_V_1_read' <Predicate = (!tmp)> <Delay = 1.46> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.53> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 256> <FIFO>
+ST_3 : Operation 23 [1/1] (1.46ns)   --->   "%nodelay_V_read = read i16 @_ssdm_op_Read.ap_fifo.volatile.i16P0A, i16 %nodelay_V" [./sliding_win.h:90]   --->   Operation 23 'read' 'nodelay_V_read' <Predicate = (tmp)> <Delay = 1.46> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.61> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 512> <FIFO>
+ST_3 : Operation 24 [1/1] (1.46ns)   --->   "%nodelay_V_1_read = read i16 @_ssdm_op_Read.ap_fifo.volatile.i16P0A, i16 %nodelay_V_1" [./sliding_win.h:90]   --->   Operation 24 'read' 'nodelay_V_1_read' <Predicate = (tmp)> <Delay = 1.46> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.61> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 512> <FIFO>
+
+State 4 <SV = 3> <Delay = 1.58>
+ST_4 : Operation 25 [1/1] (1.58ns)   --->   "%br_ln89 = br void %arrayidx17.i1.1.case.1" [./sliding_win.h:89]   --->   Operation 25 'br' 'br_ln89' <Predicate = (!tmp)> <Delay = 1.58>
+ST_4 : Operation 26 [1/1] (1.58ns)   --->   "%br_ln0 = br void %arrayidx17.i1.1.case.1"   --->   Operation 26 'br' 'br_ln0' <Predicate = (tmp)> <Delay = 1.58>
+
+State 5 <SV = 4> <Delay = 1.68>
+ST_5 : Operation 27 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 512, i64 512, i64 512"   --->   Operation 27 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 28 [1/1] (0.00ns)   --->   "%specpipeline_ln83 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_1" [./sliding_win.h:83]   --->   Operation 28 'specpipeline' 'specpipeline_ln83' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 29 [1/1] (0.00ns)   --->   "%specloopname_ln83 = specloopname void @_ssdm_op_SpecLoopName, void @empty_5" [./sliding_win.h:83]   --->   Operation 29 'specloopname' 'specloopname_ln83' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 30 [1/1] (0.00ns)   --->   "%zext_ln92 = zext i9 %lshr_ln" [./sliding_win.h:92]   --->   Operation 30 'zext' 'zext_ln92' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 31 [1/1] (0.00ns)   --->   "%data2window_V_addr = getelementptr i16 %data2window_V, i64 0, i64 %zext_ln92" [./sliding_win.h:92]   --->   Operation 31 'getelementptr' 'data2window_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 32 [1/1] (1.68ns)   --->   "%store_ln92 = store i16 %delayed_V_read, i9 %data2window_V_addr" [./sliding_win.h:92]   --->   Operation 32 'store' 'store_ln92' <Predicate = (!tmp)> <Delay = 1.68> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 2> <II = 1> <Delay = 1.68> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 512> <RAM>
+ST_5 : Operation 33 [1/1] (1.68ns)   --->   "%store_ln92 = store i16 %nodelay_V_read, i9 %data2window_V_addr" [./sliding_win.h:92]   --->   Operation 33 'store' 'store_ln92' <Predicate = (tmp)> <Delay = 1.68> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 2> <II = 1> <Delay = 1.68> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 512> <RAM>
+ST_5 : Operation 34 [1/1] (0.00ns)   --->   "%dout_val = phi i16 %delayed_V_1_read, void %arrayidx17.i1.case.0, i16 %nodelay_V_1_read, void %arrayidx17.i1.case.0.thread" [./sliding_win.h:88]   --->   Operation 34 'phi' 'dout_val' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 35 [1/1] (0.00ns)   --->   "%data2window_V_2_addr = getelementptr i16 %data2window_V_2, i64 0, i64 %zext_ln92" [./sliding_win.h:92]   --->   Operation 35 'getelementptr' 'data2window_V_2_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 36 [1/1] (1.68ns)   --->   "%store_ln92 = store i16 %dout_val, i9 %data2window_V_2_addr" [./sliding_win.h:92]   --->   Operation 36 'store' 'store_ln92' <Predicate = true> <Delay = 1.68> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 2> <II = 1> <Delay = 1.68> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 512> <RAM>
+ST_5 : Operation 37 [1/1] (0.00ns)   --->   "%return_ln0 = return void @_ssdm_op_Return"   --->   Operation 37 'return' 'return_ln0' <Predicate = (tmp_1)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 1.08ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i9', ./sliding_win.h:83) with incoming values : ('trunc_ln83', ./sliding_win.h:83) [13]  (1.59 ns)
+
+ <State 2>: 1.73ns
+The critical path consists of the following:
+	'phi' operation ('i9', ./sliding_win.h:83) with incoming values : ('trunc_ln83', ./sliding_win.h:83) [13]  (0 ns)
+	'add' operation ('i', ./sliding_win.h:83) [37]  (1.73 ns)
+
+ <State 3>: 1.46ns
+The critical path consists of the following:
+	fifo read operation ('delayed_V_read', ./sliding_win.h:88) on port 'delayed_V' (./sliding_win.h:88) [24]  (1.46 ns)
+
+ <State 4>: 1.59ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('dout_val', ./sliding_win.h:88) with incoming values : ('delayed_V_1_read', ./sliding_win.h:88) ('nodelay_V_1_read', ./sliding_win.h:90) [34]  (1.59 ns)
+
+ <State 5>: 1.68ns
+The critical path consists of the following:
+	'getelementptr' operation ('data2window_V_addr', ./sliding_win.h:92) [21]  (0 ns)
+	'store' operation ('store_ln92', ./sliding_win.h:92) of variable 'delayed_V_read', ./sliding_win.h:88 on array 'data2window_V' [25]  (1.68 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

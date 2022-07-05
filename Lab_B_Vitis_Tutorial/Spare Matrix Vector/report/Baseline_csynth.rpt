@@ -1,0 +1,131 @@
+
+
+================================================================
+== Synthesis Summary Report of 'spmv'
+================================================================
++ General Information: 
+    * Date:           Sun Mar 27 01:00:01 2022
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+    * Project:        Baseline
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------+------+------+---------+--------+----------+---------+------+----------+------+--------+-----------+----------+-----+
+    |        Modules       | Issue|      | Latency | Latency| Iteration|         | Trip |          |      |        |           |          |     |
+    |        & Loops       | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP  |     FF    |    LUT   | URAM|
+    +----------------------+------+------+---------+--------+----------+---------+------+----------+------+--------+-----------+----------+-----+
+    |+ spmv                |     -|  0.04|        -|       -|         -|        -|     -|        no|     -|  5 (2%)|  736 (~0%)|  981 (1%)|    -|
+    | o L1                 |     -|  7.30|        -|       -|         -|        -|     -|        no|     -|       -|          -|         -|    -|
+    |  + spmv_Pipeline_L2  |     -|  0.04|        -|       -|         -|        -|     -|        no|     -|  5 (2%)|  648 (~0%)|  916 (1%)|    -|
+    |   o L2               |    II|  7.30|        -|       -|        13|        5|     -|       yes|     -|       -|          -|         -|    -|
+    +----------------------+------+------+---------+--------+----------+---------+------+----------+------+--------+-----------+----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++----------------------+----------+
+| Interface            | Bitwidth |
++----------------------+----------+
+| columnIndex_address0 | 12       |
+| columnIndex_q0       | 32       |
+| rowPtr_address0      | 9        |
+| rowPtr_address1      | 9        |
+| rowPtr_q0            | 32       |
+| rowPtr_q1            | 32       |
+| values_address0      | 12       |
+| values_q0            | 32       |
+| x_address0           | 8        |
+| x_q0                 | 32       |
+| y_address0           | 8        |
+| y_d0                 | 32       |
++----------------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-------------+-----------+----------+
+| Argument    | Direction | Datatype |
++-------------+-----------+----------+
+| rowPtr      | in        | int*     |
+| columnIndex | in        | int*     |
+| values      | in        | float*   |
+| y           | out       | float*   |
+| x           | in        | float*   |
++-------------+-----------+----------+
+
+* SW-to-HW Mapping
++-------------+----------------------+---------+----------+
+| Argument    | HW Interface         | HW Type | HW Usage |
++-------------+----------------------+---------+----------+
+| rowPtr      | rowPtr_address0      | port    | offset   |
+| rowPtr      | rowPtr_ce0           | port    |          |
+| rowPtr      | rowPtr_q0            | port    |          |
+| rowPtr      | rowPtr_address1      | port    | offset   |
+| rowPtr      | rowPtr_ce1           | port    |          |
+| rowPtr      | rowPtr_q1            | port    |          |
+| columnIndex | columnIndex_address0 | port    | offset   |
+| columnIndex | columnIndex_ce0      | port    |          |
+| columnIndex | columnIndex_q0       | port    |          |
+| values      | values_address0      | port    | offset   |
+| values      | values_ce0           | port    |          |
+| values      | values_q0            | port    |          |
+| y           | y_address0           | port    | offset   |
+| y           | y_ce0                | port    |          |
+| y           | y_we0                | port    |          |
+| y           | y_d0                 | port    |          |
+| x           | x_address0           | port    | offset   |
+| x           | x_ce0                | port    |          |
+| x           | x_q0                 | port    |          |
++-------------+----------------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------+-----+--------+------------------+------+---------+---------+
+| Name                                 | DSP | Pragma | Variable         | Op   | Impl    | Latency |
++--------------------------------------+-----+--------+------------------+------+---------+---------+
+| + spmv                               | 5   |        |                  |      |         |         |
+|   indvars_iv_next6_fu_123_p2         | -   |        | indvars_iv_next6 | add  | fabric  | 0       |
+|  + spmv_Pipeline_L2                  | 5   |        |                  |      |         |         |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2  | 3   |        | mul              | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | y0_1             | fadd | fulldsp | 4       |
+|    add_ln8_fu_142_p2                 | -   |        | add_ln8          | add  | fabric  | 0       |
++--------------------------------------+-----+--------+------------------+------+---------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+---------------------------------+
+| Type     | Options | Location                        |
++----------+---------+---------------------------------+
+| pipeline |         | Baseline/src/spmv.cpp:9 in spmv |
+| pipeline |         | Baseline/src/spmv.cpp:22 in mv  |
++----------+---------+---------------------------------+
+
+

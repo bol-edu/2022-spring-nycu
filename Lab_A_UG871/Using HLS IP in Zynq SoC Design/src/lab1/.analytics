@@ -1,0 +1,14 @@
+timestamp=[2022-03-26 17:12:48], mode=WORKBENCH_START, duration=0:00:04.682, duration_ms=4682, data={}
+timestamp=[2022-03-26 17:12:48], mode=WORKBENCH_UI_INIT, duration=0:00:00.445, duration_ms=445, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2022-03-26 17:12:48], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.058, duration_ms=58, data={}
+timestamp=[2022-03-26 17:17:29], mode=APP_CREATION, duration=0:00:16.034, duration_ms=16034, data={name=Zynq_Design_Test, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=Zynq_Design_wrapper, application_type=application}
+timestamp=[2022-03-27 21:14:26], mode=PLATFORM_GENERATION, duration=0:00:15.995, duration_ms=15995, data={name=Zynq_Design_wrapper}
+timestamp=[2022-03-27 21:14:26], mode=BUILD, duration=0:00:00.116, duration_ms=116, data={name=Zynq_Design_Test, configuration=Debug, clean_build=true}
+timestamp=[2022-03-27 21:14:27], mode=BUILD, duration=0:00:00.744, duration_ms=744, data={name=Zynq_Design_Test, configuration=Debug, clean_build=false}
+timestamp=[2022-03-27 21:15:36], mode=BUILD, duration=0:00:00.703, duration_ms=703, data={name=Zynq_Design_Test, configuration=Debug, clean_build=false}
+timestamp=[2022-03-27 21:16:46], mode=PLATFORM_GENERATION, duration=0:00:03.543, duration_ms=3543, data={name=Zynq_Design_wrapper}
+timestamp=[2022-03-27 21:16:46], mode=BUILD, duration=0:00:00.087, duration_ms=87, data={name=Zynq_Design_Test, configuration=Debug, clean_build=true}
+timestamp=[2022-03-27 21:16:59], mode=PLATFORM_GENERATION, duration=0:00:08.780, duration_ms=8780, data={name=Zynq_Design_wrapper}
+timestamp=[2022-03-27 21:16:59], mode=BUILD, duration=0:00:00.524, duration_ms=524, data={name=Zynq_Design_Test, configuration=Debug, clean_build=false}
+timestamp=[2022-03-27 21:25:06], mode=BUILD, duration=0:00:00.366, duration_ms=366, data={name=Zynq_Design_Test, configuration=Debug, clean_build=false}
+timestamp=[2022-03-27 21:25:31], mode=BUILD, duration=0:00:00.289, duration_ms=289, data={name=Zynq_Design_Test, configuration=Debug, clean_build=false}

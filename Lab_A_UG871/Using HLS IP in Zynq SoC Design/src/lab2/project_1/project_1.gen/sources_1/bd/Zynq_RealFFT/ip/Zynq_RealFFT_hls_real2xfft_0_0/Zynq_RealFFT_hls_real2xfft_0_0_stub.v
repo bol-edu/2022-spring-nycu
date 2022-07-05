@@ -1,0 +1,35 @@
+// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+// --------------------------------------------------------------------------------
+// Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+// Date        : Sat Mar 26 22:13:05 2022
+// Host        : DESKTOP-JELOSF8 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ip/Zynq_RealFFT_hls_real2xfft_0_0/Zynq_RealFFT_hls_real2xfft_0_0_stub.v
+// Design      : Zynq_RealFFT_hls_real2xfft_0_0
+// Purpose     : Stub declaration of top-level module interface
+// Device      : xc7z020clg400-1
+// --------------------------------------------------------------------------------
+
+// This empty module with port declaration file causes synthesis tools to infer a black box for IP.
+// The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
+// Please paste the declaration into a Verilog source file or add the file as an additional source.
+(* X_CORE_INFO = "hls_real2xfft,Vivado 2021.2" *)
+module Zynq_RealFFT_hls_real2xfft_0_0(ap_local_block, ap_local_deadlock, ap_clk, 
+  ap_rst_n, ap_start, ap_done, ap_ready, ap_idle, din_TVALID, din_TREADY, din_TDATA, dout_TVALID, 
+  dout_TREADY, dout_TDATA)
+/* synthesis syn_black_box black_box_pad_pin="ap_local_block,ap_local_deadlock,ap_clk,ap_rst_n,ap_start,ap_done,ap_ready,ap_idle,din_TVALID,din_TREADY,din_TDATA[15:0],dout_TVALID,dout_TREADY,dout_TDATA[47:0]" */;
+  output ap_local_block;
+  output ap_local_deadlock;
+  input ap_clk;
+  input ap_rst_n;
+  input ap_start;
+  output ap_done;
+  output ap_ready;
+  output ap_idle;
+  input din_TVALID;
+  output din_TREADY;
+  input [15:0]din_TDATA;
+  output dout_TVALID;
+  input dout_TREADY;
+  output [47:0]dout_TDATA;
+endmodule

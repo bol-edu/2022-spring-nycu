@@ -1,0 +1,164 @@
+
+
+================================================================
+== Synthesis Summary Report of 'spmv'
+================================================================
++ General Information: 
+    * Date:           Sun Mar 27 17:44:11 2022
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+    * Project:        partial_unroll
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    |         Modules        |  Issue |       | Latency | Latency| Iteration|         | Trip |          |      |        |           |           |     |
+    |         & Loops        |  Type  | Slack | (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP  |     FF    |    LUT    | URAM|
+    +------------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    |+ spmv                  |  Timing|  -1.54|        -|       -|         -|        -|     -|        no|     -|  5 (2%)|  1933 (1%)|  1995 (3%)|    -|
+    | o L1                   |       -|   7.30|        -|       -|         -|        -|     -|        no|     -|       -|          -|          -|    -|
+    |  + spmv_Pipeline_L2_1  |  Timing|  -1.54|        -|       -|         -|        -|     -|        no|     -|  5 (2%)|  1845 (1%)|  1930 (3%)|    -|
+    |   o L2_1               |       -|   7.30|        -|       -|        37|        5|     -|       yes|     -|       -|          -|          -|    -|
+    +------------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++----------------------+----------+
+| Interface            | Bitwidth |
++----------------------+----------+
+| columnIndex_address0 | 12       |
+| columnIndex_address1 | 12       |
+| columnIndex_q0       | 32       |
+| columnIndex_q1       | 32       |
+| rowPtr_address0      | 9        |
+| rowPtr_address1      | 9        |
+| rowPtr_q0            | 32       |
+| rowPtr_q1            | 32       |
+| values_address0      | 12       |
+| values_address1      | 12       |
+| values_q0            | 32       |
+| values_q1            | 32       |
+| x_address0           | 8        |
+| x_address1           | 8        |
+| x_q0                 | 32       |
+| x_q1                 | 32       |
+| y_address0           | 8        |
+| y_d0                 | 32       |
++----------------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-------------+-----------+----------+
+| Argument    | Direction | Datatype |
++-------------+-----------+----------+
+| rowPtr      | in        | int*     |
+| columnIndex | in        | int*     |
+| values      | in        | float*   |
+| y           | out       | float*   |
+| x           | in        | float*   |
++-------------+-----------+----------+
+
+* SW-to-HW Mapping
++-------------+----------------------+---------+----------+
+| Argument    | HW Interface         | HW Type | HW Usage |
++-------------+----------------------+---------+----------+
+| rowPtr      | rowPtr_address0      | port    | offset   |
+| rowPtr      | rowPtr_ce0           | port    |          |
+| rowPtr      | rowPtr_q0            | port    |          |
+| rowPtr      | rowPtr_address1      | port    | offset   |
+| rowPtr      | rowPtr_ce1           | port    |          |
+| rowPtr      | rowPtr_q1            | port    |          |
+| columnIndex | columnIndex_address0 | port    | offset   |
+| columnIndex | columnIndex_ce0      | port    |          |
+| columnIndex | columnIndex_q0       | port    |          |
+| columnIndex | columnIndex_address1 | port    | offset   |
+| columnIndex | columnIndex_ce1      | port    |          |
+| columnIndex | columnIndex_q1       | port    |          |
+| values      | values_address0      | port    | offset   |
+| values      | values_ce0           | port    |          |
+| values      | values_q0            | port    |          |
+| values      | values_address1      | port    | offset   |
+| values      | values_ce1           | port    |          |
+| values      | values_q1            | port    |          |
+| y           | y_address0           | port    | offset   |
+| y           | y_ce0                | port    |          |
+| y           | y_we0                | port    |          |
+| y           | y_d0                 | port    |          |
+| x           | x_address0           | port    | offset   |
+| x           | x_ce0                | port    |          |
+| x           | x_q0                 | port    |          |
+| x           | x_address1           | port    | offset   |
+| x           | x_ce1                | port    |          |
+| x           | x_q1                 | port    |          |
++-------------+----------------------+---------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------+-----+--------+-------------------+------+---------+---------+
+| Name                                 | DSP | Pragma | Variable          | Op   | Impl    | Latency |
++--------------------------------------+-----+--------+-------------------+------+---------+---------+
+| + spmv                               | 5   |        |                   |      |         |         |
+|   indvars_iv_next12_fu_123_p2        | -   |        | indvars_iv_next12 | add  | fabric  | 0       |
+|  + spmv_Pipeline_L2_1                | 5   |        |                   |      |         |         |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2  | 3   |        | yt                | fmul | maxdsp  | 3       |
+|    add_ln16_fu_272_p2                | -   |        | add_ln16          | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2  | 3   |        | mul               | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | yt_1              | fadd | fulldsp | 4       |
+|    add_ln16_1_fu_306_p2              | -   |        | add_ln16_1        | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2  | 3   |        | mul24_1           | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | yt_3              | fadd | fulldsp | 4       |
+|    add_ln16_2_fu_318_p2              | -   |        | add_ln16_2        | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2  | 3   |        | mul24_2           | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | yt_5              | fadd | fulldsp | 4       |
+|    add_ln16_3_fu_330_p2              | -   |        | add_ln16_3        | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2  | 3   |        | mul24_3           | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | yt_7              | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | y0_1              | fadd | fulldsp | 4       |
+|    add_ln12_fu_285_p2                | -   |        | add_ln12          | add  | fabric  | 0       |
++--------------------------------------+-----+--------+-------------------+------+---------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+----------------------------------------------------------+
+| Type     | Options | Location                                                 |
++----------+---------+----------------------------------------------------------+
+| pipeline | II=S    | partial_unroll/src/spmv_partial_unrolling.cpp:13 in spmv |
++----------+---------+----------------------------------------------------------+
+
+

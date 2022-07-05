@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# xsim v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sat Mar 26 16:39:23 2022
+# Process ID: 17860
+# Current directory: C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/hls_macc/vhls_prj/solution1/sim/verilog
+# Command line: xsim.exe -mode tcl -source {xsim.dir/hls_macc/xsim_script.tcl}
+# Log file: C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/hls_macc/vhls_prj/solution1/sim/verilog/xsim.log
+# Journal file: C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/hls_macc/vhls_prj/solution1/sim/verilog\xsim.jou
+# Running On: DESKTOP-JELOSF8, OS: Windows, CPU Frequency: 3610 MHz, CPU Physical cores: 12, Host memory: 34088 MB
+#-----------------------------------------------------------
+source xsim.dir/hls_macc/xsim_script.tcl
+source hls_macc.tcl

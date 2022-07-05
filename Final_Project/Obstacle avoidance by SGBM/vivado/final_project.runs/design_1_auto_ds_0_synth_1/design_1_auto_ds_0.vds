@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Jun 22 01:14:49 2022
+# Process ID: 1459722
+# Current directory: /home/joinet/HLS/final_project/final_project.runs/design_1_auto_ds_0_synth_1
+# Command line: vivado -log design_1_auto_ds_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_auto_ds_0.tcl
+# Log file: /home/joinet/HLS/final_project/final_project.runs/design_1_auto_ds_0_synth_1/design_1_auto_ds_0.vds
+# Journal file: /home/joinet/HLS/final_project/final_project.runs/design_1_auto_ds_0_synth_1/vivado.jou
+# Running On: buyatti, OS: Linux, CPU Frequency: 4495.217 MHz, CPU Physical cores: 24, Host memory: 67338 MB
+#-----------------------------------------------------------
+source design_1_auto_ds_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/joinet/HLS/HLS-dt-kv260/stereo_bm_strm/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2021.2/data/ip'.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_auto_ds_0, cache-ID = 0cd60326363d5586.
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 22 01:15:07 2022...

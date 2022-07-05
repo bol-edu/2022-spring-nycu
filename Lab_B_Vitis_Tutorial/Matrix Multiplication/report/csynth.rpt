@@ -1,0 +1,175 @@
+
+
+================================================================
+== Synthesis Summary Report of 'blockmatmul'
+================================================================
++ General Information: 
+    * Date:           Mon Mar 28 17:41:09 2022
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+    * Project:        block_mm
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
+    |                Modules               | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |          |             |             |     |
+    |                & Loops               | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |      FF     |     LUT     | URAM|
+    +--------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
+    |+ blockmatmul*                        |     -|  0.39|       50|  500.000|         -|       51|     -|  dataflow|     -|  48 (21%)|  13326 (12%)|  35376 (66%)|    -|
+    | + Loop_1_proc1                       |     -|  0.39|       50|  500.000|         -|       50|     -|        no|     -|  48 (21%)|    4540 (4%)|    2164 (4%)|    -|
+    |  + Loop_1_proc1_Pipeline_1           |     -|  3.61|       18|  180.000|         -|       18|     -|        no|     -|         -|      7 (~0%)|     50 (~0%)|    -|
+    |   o Loop 1                           |     -|  7.30|       16|  160.000|         1|        1|    16|       yes|     -|         -|            -|            -|    -|
+    |  + Loop_1_proc1_Pipeline_partialsum  |     -|  0.39|       13|  130.000|         -|       13|     -|        no|     -|  48 (21%)|    3998 (3%)|    1682 (3%)|    -|
+    |   o partialsum                       |     -|  7.30|       11|  110.000|         5|        1|     8|       yes|     -|         -|            -|            -|    -|
+    | + Loop_utput_proc                    |     -|  0.50|       16|  160.000|         -|       16|     -|        no|     -|         -|    8656 (8%)|  33166 (62%)|    -|
+    |  o utput                             |    II|  7.30|       14|  140.000|         6|        3|     4|       yes|     -|         -|            -|            -|    -|
+    +--------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_FIFO
++-----------+------------+
+| Interface | Data Width |
++-----------+------------+
+| Arows     | 128        |
+| Bcols     | 128        |
++-----------+------------+
+
+* REGISTER
++-------------+---------+----------+
+| Interface   | Mode    | Bitwidth |
++-------------+---------+----------+
+| ABpartial_i | ap_none | 512      |
+| ABpartial_o | ap_none | 512      |
+| it          | ap_none | 32       |
++-------------+---------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-----------+-----------+----------------------+
+| Argument  | Direction | Datatype             |
++-----------+-----------+----------------------+
+| Arows     | in        | stream<blockvec, 0>& |
+| Bcols     | in        | stream<blockvec, 0>& |
+| ABpartial | inout     | &                    |
+| it        | in        | int                  |
++-----------+-----------+----------------------+
+
+* SW-to-HW Mapping
++-----------+--------------------+-----------+
+| Argument  | HW Interface       | HW Type   |
++-----------+--------------------+-----------+
+| Arows     | Arows              | interface |
+| Bcols     | Bcols              | interface |
+| ABpartial | ABpartial_i        | port      |
+| ABpartial | ABpartial_o        | port      |
+| ABpartial | ABpartial_o_ap_vld | port      |
+| it        | it                 | port      |
++-----------+--------------------+-----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                                 | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++--------------------------------------+-----+--------+-------------+-----+--------+---------+
+| + blockmatmul                        | 48  |        |             |     |        |         |
+|  + Loop_1_proc1                      | 48  |        |             |     |        |         |
+|   + Loop_1_proc1_Pipeline_1          | 0   |        |             |     |        |         |
+|     add_5ns_5ns_5_1_1_U1             | -   |        | empty_31    | add | fabric | 0       |
+|   + Loop_1_proc1_Pipeline_partialsum | 48  |        |             |     |        |         |
+|     k_2_fu_496_p2                    | -   |        | k_2         | add | fabric | 0       |
+|     mul_32s_32s_32_2_1_U4            | 3   |        | mul_ln33_12 | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U5            | 3   |        | mul_ln33_8  | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U6            | 3   |        | mul_ln33_4  | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U7            | 3   |        | mul_ln33    | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U8            | 3   |        | mul_ln33_13 | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U9            | 3   |        | mul_ln33_9  | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U10           | 3   |        | mul_ln33_5  | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U11           | 3   |        | mul_ln33_1  | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U12           | 3   |        | mul_ln33_14 | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U13           | 3   |        | mul_ln33_10 | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U14           | 3   |        | mul_ln33_6  | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U15           | 3   |        | mul_ln33_2  | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U16           | 3   |        | mul_ln33_15 | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U17           | 3   |        | mul_ln33_11 | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U18           | 3   |        | mul_ln33_7  | mul | auto   | 1       |
+|     mul_32s_32s_32_2_1_U19           | 3   |        | mul_ln33_3  | mul | auto   | 1       |
+|     add_ln33_fu_687_p2               | -   |        | add_ln33    | add | fabric | 0       |
+|     add_ln33_1_fu_692_p2             | -   |        | add_ln33_1  | add | fabric | 0       |
+|     add_ln33_2_fu_697_p2             | -   |        | add_ln33_2  | add | fabric | 0       |
+|     add_ln33_3_fu_702_p2             | -   |        | add_ln33_3  | add | fabric | 0       |
+|     add_ln33_4_fu_707_p2             | -   |        | add_ln33_4  | add | fabric | 0       |
+|     add_ln33_5_fu_712_p2             | -   |        | add_ln33_5  | add | fabric | 0       |
+|     add_ln33_6_fu_717_p2             | -   |        | add_ln33_6  | add | fabric | 0       |
+|     add_ln33_7_fu_722_p2             | -   |        | add_ln33_7  | add | fabric | 0       |
+|     add_ln33_8_fu_727_p2             | -   |        | add_ln33_8  | add | fabric | 0       |
+|     add_ln33_9_fu_732_p2             | -   |        | add_ln33_9  | add | fabric | 0       |
+|     add_ln33_10_fu_737_p2            | -   |        | add_ln33_10 | add | fabric | 0       |
+|     add_ln33_11_fu_742_p2            | -   |        | add_ln33_11 | add | fabric | 0       |
+|     add_ln33_12_fu_747_p2            | -   |        | add_ln33_12 | add | fabric | 0       |
+|     add_ln33_13_fu_752_p2            | -   |        | add_ln33_13 | add | fabric | 0       |
+|     add_ln33_14_fu_757_p2            | -   |        | add_ln33_14 | add | fabric | 0       |
+|     add_ln33_15_fu_762_p2            | -   |        | add_ln33_15 | add | fabric | 0       |
+|  + Loop_utput_proc                   | 0   |        |             |     |        |         |
+|    add_ln37_fu_162_p2                | -   |        | add_ln37    | add | fabric | 1       |
+|    add_ln39_fu_207_p2                | -   |        | add_ln39    | add | fabric | 1       |
+|    sub_512ns_512ns_512_2_1_U58       | -   |        | sub_ln39    | sub | fabric | 1       |
+|    add_ln39_1_fu_249_p2              | -   |        | add_ln39_1  | add | fabric | 1       |
+|    sub_512ns_512ns_512_2_1_U59       | -   |        | sub_ln39_1  | sub | fabric | 1       |
+|    add_ln39_2_fu_291_p2              | -   |        | add_ln39_2  | add | fabric | 1       |
+|    sub_512ns_512ns_512_2_1_U60       | -   |        | sub_ln39_2  | sub | fabric | 1       |
+|    add_ln39_3_fu_357_p2              | -   |        | add_ln39_3  | add | fabric | 1       |
+|    sub_512ns_512ns_512_2_1_U61       | -   |        | sub_ln39_3  | sub | fabric | 1       |
++--------------------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++---------------+------+------+--------+----------+---------+------+---------+
+| Name          | BRAM | URAM | Pragma | Variable | Storage | Impl | Latency |
++---------------+------+------+--------+----------+---------+------+---------+
+| + blockmatmul | 0    | 0    |        |          |         |      |         |
+|   AB_U        | 2    | -    |        | AB       | ram_t2p | auto | 1       |
++---------------+------+------+--------+----------+---------+------+---------+
+
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+--------------------------------+
+| Type     | Options | Location                       |
++----------+---------+--------------------------------+
+| dataflow |         | block_mm.cpp:4 in blockmatmul  |
+| pipeline | II=1    | block_mm.cpp:28 in blockmatmul |
++----------+---------+--------------------------------+
+
+

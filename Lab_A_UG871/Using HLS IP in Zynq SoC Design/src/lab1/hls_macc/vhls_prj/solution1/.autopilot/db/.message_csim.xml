@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SIM 211-2]" key="SIM_2_1569" tag="" content="*************** CSIM start ***************" resolution=""/>
+	<Message severity="INFO" prefix="[SIM 211-4]" key="SIM_4_1577" tag="" content="CSIM will launch GCC as the compiler." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;C:/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/win64.o/apcc.exe&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;wdb87&apos; on host &apos;desktop-jelosf8&apos; (Windows NT_amd64 version 6.2) on Sat Mar 26 16:39:01 +0800 2022" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/hls_macc/vhls_prj/solution1/csim/build&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is apcc_db" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-1]" key="APCC_1_1611" tag="" content="APCC is done." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;C:/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/win64.o/apcc.exe&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;wdb87&apos; on host &apos;desktop-jelosf8&apos; (Windows NT_amd64 version 6.2) on Sat Mar 26 16:39:04 +0800 2022" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab1/hls_macc/vhls_prj/solution1/csim/build&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is apcc_db" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-1]" key="APCC_1_1611" tag="" content="APCC is done." resolution=""/>
+	<Message severity="INFO" prefix="[SIM 211-1]" key="SIM_1_1586" tag="" content="CSim done with 0 errors." resolution=""/>
+	<Message severity="INFO" prefix="[SIM 211-3]" key="SIM_3_1588" tag="" content="*************** CSIM finish ***************" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command csim_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 7.7 seconds; current allocated memory: 403.520 MB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-1510]" key="HLS_150_1932" tag="" content="Running: csynth_design" resolution=""/>
+</Messages>

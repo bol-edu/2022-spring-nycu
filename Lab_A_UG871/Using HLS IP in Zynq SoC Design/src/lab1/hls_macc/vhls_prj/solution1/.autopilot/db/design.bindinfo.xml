@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op select" ID="" IMPL="auto_sel" LATENCY="0" OPTYPE="select" PRAGMA="" RTLNAME="select_ln12_fu_75_p3" SOURCE="hls_macc.c:12" VARIABLE="select_ln12" MODULE="hls_macc" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op mul" ID="" IMPL="dsp" LATENCY="4" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_5_1_U1" SOURCE="hls_macc.c:14" VARIABLE="mul_ln14" MODULE="hls_macc" LOOP="" BUNDLEDNAME="" DSP="3" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln14_fu_82_p2" SOURCE="hls_macc.c:14" VARIABLE="add_ln14" MODULE="hls_macc" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="adapter" DISPLAY="bind_adapter axilite" ID="" IMPL="" LATENCY="" OPTYPE="" PRAGMA="yes" RTLNAME="HLS_MACC_PERIPH_BUS_s_axi_U" SOURCE="" VARIABLE="" MODULE="hls_macc" LOOP="" BUNDLEDNAME="HLS_MACC_PERIPH_BUS" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

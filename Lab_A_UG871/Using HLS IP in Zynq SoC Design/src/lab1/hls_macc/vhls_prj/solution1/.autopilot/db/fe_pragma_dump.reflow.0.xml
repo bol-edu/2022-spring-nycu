@@ -1,0 +1,7 @@
+<pragmas>
+<pragma file="hls_macc.c" line="4" pragmaType="interface" parentfunction="hls_macc" mode="s_axilite" port="" bundle="HLS_MACC_PERIPH_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="hls_macc.c" line="5" pragmaType="interface" parentfunction="hls_macc" mode="s_axilite" port="a" bundle="HLS_MACC_PERIPH_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="hls_macc.c" line="6" pragmaType="interface" parentfunction="hls_macc" mode="s_axilite" port="b" bundle="HLS_MACC_PERIPH_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="hls_macc.c" line="7" pragmaType="interface" parentfunction="hls_macc" mode="s_axilite" port="accum" bundle="HLS_MACC_PERIPH_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="hls_macc.c" line="8" pragmaType="interface" parentfunction="hls_macc" mode="s_axilite" port="accum_clr" bundle="HLS_MACC_PERIPH_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+</pragmas>

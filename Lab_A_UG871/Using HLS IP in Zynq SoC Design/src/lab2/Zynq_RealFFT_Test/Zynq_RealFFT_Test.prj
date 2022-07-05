@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="Zynq_RealFFT_Test" location="C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/Zynq_RealFFT_Test" platform="C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/Zynq_RealFFT_wrapper/export/Zynq_RealFFT_wrapper/Zynq_RealFFT_wrapper.xpfm" platformUID="xilinx:pynq-z2::0.0(custom)" systemProject="Zynq_RealFFT_Test_system" sysConfig="Zynq_RealFFT_wrapper" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="58d8c238bc15aea58c9af045b1c805bb">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.921303024">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.543722137" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

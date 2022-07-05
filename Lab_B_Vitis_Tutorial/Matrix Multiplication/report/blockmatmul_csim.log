@@ -1,0 +1,8 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../blockmatmul_test_init.cpp in debug mode
+   Compiling ../../../../block_mm.cpp in debug mode
+   Generating csim.exe
+passed
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

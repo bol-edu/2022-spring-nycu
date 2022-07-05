@@ -1,0 +1,9 @@
+
+#####################Direct Connection##################
+## ap_ctrl
+PORT ap_start = "", DIR = I
+PORT ap_ready = "", DIR = O
+PORT ap_done = "", DIR = O
+PORT ap_idle = "", DIR = O
+########################################################
+

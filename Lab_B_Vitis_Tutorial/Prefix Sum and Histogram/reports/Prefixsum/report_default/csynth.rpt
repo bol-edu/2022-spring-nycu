@@ -1,0 +1,148 @@
+
+
+================================================================
+== Synthesis Summary Report of 'perfixsum'
+================================================================
++ General Information: 
+    * Date:           Sun Mar 27 00:15:27 2022
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+    * Project:        hls_Perfixsum
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+--------+----+-----------+-----------+-----+
+    |                Modules               |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |        |    |           |           |     |
+    |                & Loops               |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM  | DSP|     FF    |    LUT    | URAM|
+    +--------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+--------+----+-----------+-----------+-----+
+    |+ perfixsum                           |  Timing|  -0.00|      159|  1.590e+03|         -|      160|     -|        no|  4 (1%)|   -|  1122 (1%)|  1704 (3%)|    -|
+    | + perfixsum_Pipeline_VITIS_LOOP_5_1  |  Timing|  -0.00|      131|  1.310e+03|         -|      131|     -|        no|       -|   -|  113 (~0%)|  136 (~0%)|    -|
+    |  o VITIS_LOOP_5_1                    |       -|   7.30|      129|  1.290e+03|         4|        1|   127|       yes|       -|   -|          -|          -|    -|
+    +--------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+--------+----+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface  | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                               |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                 |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN 5=CHAN2_INT_EN             |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST 5=CHAN2_INT_ST             |
+| s_axi_control | in_r_1   | 0x10   | 32    | W      | Data signal of in_r              |                                                          |
+| s_axi_control | in_r_2   | 0x14   | 32    | W      | Data signal of in_r              |                                                          |
+| s_axi_control | out_r_1  | 0x1c   | 32    | W      | Data signal of out_r             |                                                          |
+| s_axi_control | out_r_2  | 0x20   | 32    | W      | Data signal of out_r             |                                                          |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| in       | inout     | int*     |
+| out      | inout     | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+
+| Argument | HW Interface  | HW Type   | HW Usage |
++----------+---------------+-----------+----------+
+| in       | m_axi_gmem    | interface |          |
+| in       | s_axi_control | interface | offset   |
+| out      | m_axi_gmem    | interface |          |
+| out      | s_axi_control | interface | offset   |
++----------+---------------+-----------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+----------------+-----------+--------+-------+----------------------------------+
+| HW Interface | Loop           | Direction | Length | Width | Location                         |
++--------------+----------------+-----------+--------+-------+----------------------------------+
+| m_axi_gmem   | VITIS_LOOP_5_1 | read      | 127    | 32    | hls_Perfixsum/Perfixsum.cpp:5:21 |
+| m_axi_gmem   | VITIS_LOOP_5_1 | write     | 127    | 32    | hls_Perfixsum/Perfixsum.cpp:5:21 |
++--------------+----------------+-----------+--------+-------+----------------------------------+
+
+* Inferred Bursts and Widening Missed
++--------------+----------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| HW Interface | Variable | Problem                                                                                                           | Location                         |
++--------------+----------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+| m_axi_gmem   | in       | Could not widen since the size of type 'i32' is greater than or equal to the max_widen_bitwidth threshold of '0'. | hls_Perfixsum/Perfixsum.cpp:5:21 |
+| m_axi_gmem   | out      | Could not widen since the size of type 'i32' is greater than or equal to the max_widen_bitwidth threshold of '0'. | hls_Perfixsum/Perfixsum.cpp:5:21 |
++--------------+----------+-------------------------------------------------------------------------------------------------------------------+----------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------+-----+--------+-----------+-----+--------+---------+
+| Name                                 | DSP | Pragma | Variable  | Op  | Impl   | Latency |
++--------------------------------------+-----+--------+-----------+-----+--------+---------+
+| + perfixsum                          | 0   |        |           |     |        |         |
+|   add_ln5_fu_178_p2                  | -   |        | add_ln5   | add | fabric | 0       |
+|   add_ln5_1_fu_194_p2                | -   |        | add_ln5_1 | add | fabric | 0       |
+|  + perfixsum_Pipeline_VITIS_LOOP_5_1 | 0   |        |           |     |        |         |
+|    add_ln7_fu_145_p2                 | -   |        | add_ln7   | add | fabric | 0       |
+|    add_ln5_fu_120_p2                 | -   |        | add_ln5   | add | fabric | 0       |
++--------------------------------------+-----+--------+-----------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+---------------------------------------+--------------------------------------------+
+| Type      | Options                               | Location                                   |
++-----------+---------------------------------------+--------------------------------------------+
+| pipeline  |                                       | hls_Perfixsum/Perfixsum.cpp:6 in perfixsum |
+| interface | m_axi depth=128 port=in offset=slave  | DIRECTIVE in perfixsum, in                 |
+| interface | m_axi depth=128 port=out offset=slave | DIRECTIVE in perfixsum, out                |
+| interface | s_axilite port=return                 | DIRECTIVE in perfixsum, return             |
++-----------+---------------------------------------+--------------------------------------------+
+
+

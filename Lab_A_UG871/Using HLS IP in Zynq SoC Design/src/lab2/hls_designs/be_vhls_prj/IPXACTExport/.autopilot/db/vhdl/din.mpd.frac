@@ -1,0 +1,11 @@
+
+#####################AXI4-Stream Slave ################
+BUS_INTERFACE BUS = din, BUS_STD = AXIS, BUS_TYPE = TARGET
+## Generics for VHDL or Parameters for Verilog
+PARAMETER C_din_PROTOCOL = GENERIC, DT = STRING, TYPE = NON_HDL, BUS = din
+## Ports
+PORT din_TDATA = TDATA, DIR = I, VEC = [47:0], BUS = din
+PORT din_TVALID = TVALID, DIR = I, BUS = din
+PORT din_TREADY = TREADY, DIR = O, BUS = din
+########################################################
+

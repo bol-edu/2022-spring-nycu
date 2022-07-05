@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[IMPL 213-8]" key="IMPL_8_1776" tag="" content="Exporting RTL as a Vivado IP." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-802]" key="HLS 200-802" tag="" content="Generated output file fe_vhls_prj/IPXACTExport/impl/export.zip" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command export_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 8.646 seconds; current allocated memory: 0.000 MB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-1510]" key="HLS_150_1932" tag="" content="Running: open_project be_vhls_prj" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1352" tag="" content="Creating and opening project &apos;C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/hls_designs/be_vhls_prj&apos;." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-1510]" key="HLS 200-1510" tag="" content="Running: set_top hls_xfft2real" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-1510]" key="HLS 200-1510" tag="" content="Running: add_files xfft2real.cpp" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1358" tag="" content="Adding design file &apos;xfft2real.cpp&apos; to the project" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-1510]" key="HLS 200-1510" tag="" content="Running: add_files -tb real2xfft.cpp" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1358" tag="" content="Adding test bench file &apos;real2xfft.cpp&apos; to the project" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-1510]" key="HLS 200-1510" tag="" content="Running: add_files -tb hls_realfft_test.cpp" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1358" tag="" content="Adding test bench file &apos;hls_realfft_test.cpp&apos; to the project" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-1510]" key="HLS 200-1510" tag="" content="Running: open_solution IPXACTExport" resolution=""/>
+</Messages>

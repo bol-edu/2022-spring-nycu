@@ -1,0 +1,174 @@
+
+
+================================================================
+== Synthesis Summary Report of 'perfixsum'
+================================================================
++ General Information: 
+    * Date:           Sun Mar 27 23:12:50 2022
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+    * Project:        hls_Perfixsum
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
+    |                Modules                |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |         |    |           |           |     |
+    |                & Loops                |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |    LUT    | URAM|
+    +---------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
+    |+ perfixsum                            |  Timing|  -0.00|      316|  3.160e+03|         -|      317|     -|        no|  12 (4%)|   -|  1368 (1%)|  2209 (4%)|    -|
+    | + perfixsum_Pipeline_VITIS_LOOP_11_1  |  Timing|  -0.00|      130|  1.300e+03|         -|      130|     -|        no|        -|   -|   60 (~0%)|   77 (~0%)|    -|
+    |  o VITIS_LOOP_11_1                    |       -|   7.30|      128|  1.280e+03|         3|        1|   127|       yes|        -|   -|          -|          -|    -|
+    | + perfixsum_Pipeline_VITIS_LOOP_15_2  |       -|   0.61|       36|    360.000|         -|       36|     -|        no|        -|   -|  386 (~0%)|  342 (~0%)|    -|
+    |  o VITIS_LOOP_15_2                    |       -|   7.30|       34|    340.000|         5|        1|    31|       yes|        -|   -|          -|          -|    -|
+    | + perfixsum_Pipeline_VITIS_LOOP_20_3  |  Timing|  -0.00|      130|  1.300e+03|         -|      130|     -|        no|        -|   -|   47 (~0%)|  107 (~0%)|    -|
+    |  o VITIS_LOOP_20_3                    |       -|   7.30|      128|  1.280e+03|         3|        1|   127|       yes|        -|   -|          -|          -|    -|
+    +---------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface  | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                               |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                 |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN 5=CHAN2_INT_EN             |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST 5=CHAN2_INT_ST             |
+| s_axi_control | in_r_1   | 0x10   | 32    | W      | Data signal of in_r              |                                                          |
+| s_axi_control | in_r_2   | 0x14   | 32    | W      | Data signal of in_r              |                                                          |
+| s_axi_control | out_r_1  | 0x1c   | 32    | W      | Data signal of out_r             |                                                          |
+| s_axi_control | out_r_2  | 0x20   | 32    | W      | Data signal of out_r             |                                                          |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| in       | inout     | int*     |
+| out      | inout     | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+
+| Argument | HW Interface  | HW Type   | HW Usage |
++----------+---------------+-----------+----------+
+| in       | m_axi_gmem    | interface |          |
+| in       | s_axi_control | interface | offset   |
+| out      | m_axi_gmem    | interface |          |
+| out      | s_axi_control | interface | offset   |
++----------+---------------+-----------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------------+-----------+--------+-------+-----------------------------------+
+| HW Interface | Loop            | Direction | Length | Width | Location                          |
++--------------+-----------------+-----------+--------+-------+-----------------------------------+
+| m_axi_gmem   | VITIS_LOOP_11_1 | read      | 127    | 32    | hls_Perfixsum/Perfixsum.cpp:11:19 |
+| m_axi_gmem   | VITIS_LOOP_20_3 | write     | 127    | 32    | hls_Perfixsum/Perfixsum.cpp:20:19 |
++--------------+-----------------+-----------+--------+-------+-----------------------------------+
+
+* Inferred Bursts and Widening Missed
++--------------+----------+-------------------------------------------------------------------------------------------------------------------+-----------------------------------+
+| HW Interface | Variable | Problem                                                                                                           | Location                          |
++--------------+----------+-------------------------------------------------------------------------------------------------------------------+-----------------------------------+
+| m_axi_gmem   | out      | Could not widen since the size of type 'i32' is greater than or equal to the max_widen_bitwidth threshold of '0'. | hls_Perfixsum/Perfixsum.cpp:20:19 |
+| m_axi_gmem   | in       | Could not widen since the size of type 'i32' is greater than or equal to the max_widen_bitwidth threshold of '0'. | hls_Perfixsum/Perfixsum.cpp:11:19 |
++--------------+----------+-------------------------------------------------------------------------------------------------------------------+-----------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+------------+-----+--------+---------+
+| Name                                  | DSP | Pragma | Variable   | Op  | Impl   | Latency |
++---------------------------------------+-----+--------+------------+-----+--------+---------+
+| + perfixsum                           | 0   |        |            |     |        |         |
+|   add_ln11_fu_165_p2                  | -   |        | add_ln11   | add | fabric | 0       |
+|   add_ln20_fu_181_p2                  | -   |        | add_ln20   | add | fabric | 0       |
+|  + perfixsum_Pipeline_VITIS_LOOP_11_1 | 0   |        |            |     |        |         |
+|    add_ln11_fu_129_p2                 | -   |        | add_ln11   | add | fabric | 0       |
+|  + perfixsum_Pipeline_VITIS_LOOP_15_2 | 0   |        |            |     |        |         |
+|    add_ln18_fu_268_p2                 | -   |        | add_ln18   | add | fabric | 0       |
+|    add_ln15_fu_205_p2                 | -   |        | add_ln15   | add | fabric | 0       |
+|    add_ln18_1_fu_274_p2               | -   |        | add_ln18_1 | add | fabric | 0       |
+|    add_ln15_1_fu_225_p2               | -   |        | add_ln15_1 | add | fabric | 0       |
+|    add_ln18_2_fu_280_p2               | -   |        | add_ln18_2 | add | fabric | 0       |
+|    add_ln15_2_fu_245_p2               | -   |        | add_ln15_2 | add | fabric | 0       |
+|    add_ln18_3_fu_285_p2               | -   |        | add_ln18_3 | add | fabric | 0       |
+|    add_ln15_3_fu_194_p2               | -   |        | add_ln15_3 | add | fabric | 0       |
+|  + perfixsum_Pipeline_VITIS_LOOP_20_3 | 0   |        |            |     |        |         |
+|    add_ln20_fu_140_p2                 | -   |        | add_ln20   | add | fabric | 0       |
++---------------------------------------+-----+--------+------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++-----------------+------+------+--------+-------------+---------+------+---------+
+| Name            | BRAM | URAM | Pragma | Variable    | Storage | Impl | Latency |
++-----------------+------+------+--------+-------------+---------+------+---------+
+| + perfixsum     | 12   | 0    |        |             |         |      |         |
+|   local_in_0_U  | 2    | -    |        | local_in_0  | ram_s2p | auto | 1       |
+|   local_in_1_U  | 2    | -    |        | local_in_1  | ram_s2p | auto | 1       |
+|   local_out_0_U | 2    | -    |        | local_out_0 | ram_t2p | auto | 1       |
+|   local_out_1_U | 2    | -    |        | local_out_1 | ram_t2p | auto | 1       |
++-----------------+------+------+--------+-------------+---------+------+---------+
+
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+---------------------------------------+-------------------------------------------------+
+| Type            | Options                               | Location                                        |
++-----------------+---------------------------------------+-------------------------------------------------+
+| array_partition | variable=out cyclic factor=4 dim=1    | hls_Perfixsum/Perfixsum.cpp:9 in perfixsum, out |
+| array_partition | variable=in cyclic factor=4 dim=1     | hls_Perfixsum/Perfixsum.cpp:10 in perfixsum, in |
+| unroll          | factor=4                              | hls_Perfixsum/Perfixsum.cpp:16 in perfixsum     |
+| pipeline        |                                       | hls_Perfixsum/Perfixsum.cpp:17 in perfixsum     |
+| interface       | m_axi depth=128 port=in offset=slave  | DIRECTIVE in perfixsum, in                      |
+| interface       | m_axi depth=128 port=out offset=slave | DIRECTIVE in perfixsum, out                     |
+| interface       | s_axilite port=return                 | DIRECTIVE in perfixsum, return                  |
++-----------------+---------------------------------------+-------------------------------------------------+
+
+

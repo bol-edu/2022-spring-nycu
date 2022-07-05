@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# xsim v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sat Mar 26 21:17:11 2022
+# Process ID: 20916
+# Current directory: C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/hls_designs/be_vhls_prj/IPXACTExport/sim/verilog
+# Command line: xsim.exe -mode tcl -source {xsim.dir/hls_xfft2real/xsim_script.tcl}
+# Log file: C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/hls_designs/be_vhls_prj/IPXACTExport/sim/verilog/xsim.log
+# Journal file: C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/hls_designs/be_vhls_prj/IPXACTExport/sim/verilog\xsim.jou
+# Running On: DESKTOP-JELOSF8, OS: Windows, CPU Frequency: 3610 MHz, CPU Physical cores: 12, Host memory: 34088 MB
+#-----------------------------------------------------------
+source xsim.dir/hls_xfft2real/xsim_script.tcl
+open_wave_config hls_xfft2real_dataflow_ana.wcfg
+source hls_xfft2real.tcl

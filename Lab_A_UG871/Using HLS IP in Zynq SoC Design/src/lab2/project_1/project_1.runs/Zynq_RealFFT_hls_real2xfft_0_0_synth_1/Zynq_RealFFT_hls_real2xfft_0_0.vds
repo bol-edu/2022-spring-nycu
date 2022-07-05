@@ -1,0 +1,425 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sat Mar 26 22:11:54 2022
+# Process ID: 14512
+# Current directory: C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.runs/Zynq_RealFFT_hls_real2xfft_0_0_synth_1
+# Command line: vivado.exe -log Zynq_RealFFT_hls_real2xfft_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Zynq_RealFFT_hls_real2xfft_0_0.tcl
+# Log file: C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.runs/Zynq_RealFFT_hls_real2xfft_0_0_synth_1/Zynq_RealFFT_hls_real2xfft_0_0.vds
+# Journal file: C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.runs/Zynq_RealFFT_hls_real2xfft_0_0_synth_1\vivado.jou
+# Running On: DESKTOP-JELOSF8, OS: Windows, CPU Frequency: 3610 MHz, CPU Physical cores: 12, Host memory: 34088 MB
+#-----------------------------------------------------------
+source Zynq_RealFFT_hls_real2xfft_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1444.930 ; gain = 81.145
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/vivado_ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/hls_designs/fe_vhls_prj'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/hls_designs/be_vhls_prj/IPXACTExport/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.cache/ip 
+Command: synth_design -top Zynq_RealFFT_hls_real2xfft_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1300
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Zynq_RealFFT_hls_real2xfft_0_0' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ip/Zynq_RealFFT_hls_real2xfft_0_0/synth/Zynq_RealFFT_hls_real2xfft_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft.v:12]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_data2window_V_RAM_AUTO_2R1W' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_data2window_V_RAM_AUTO_2R1W.v:8]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore' (1#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_data2window_V_RAM_AUTO_2R1W' (2#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_data2window_V_RAM_AUTO_2R1W.v:8]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_Loop_sliding_win_delay_proc1' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_sliding_win_delay_proc1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W.v:48]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W_core' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W_core' (3#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W' (4#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W.v:48]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_regslice_both' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_regslice_both' (5#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_Loop_sliding_win_delay_proc1' (6#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_sliding_win_delay_proc1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_Loop_sliding_win_output_proc2' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_sliding_win_output_proc2.v:10]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter1_dout_val_reg_116_reg was removed.  [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_sliding_win_output_proc2.v:225]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter2_dout_val_reg_116_reg was removed.  [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_sliding_win_output_proc2.v:232]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_Loop_sliding_win_output_proc2' (7#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_sliding_win_output_proc2.v:10]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_s' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_s.v:10]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_bkb' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_bkb.v:6]
+INFO: [Synth 8-3876] $readmem data file './hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_bkb.dat' is read successfully [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_bkb.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_bkb' (8#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_bkb.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_cud' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_cud.v:6]
+INFO: [Synth 8-3876] $readmem data file './hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_cud.dat' is read successfully [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_cud.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_cud' (9#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_cud.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_mul_mul_16s_15ns_31_4_1' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_mul_mul_16s_15ns_31_4_1.v:32]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_mul_mul_16s_15ns_31_4_1.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0' (10#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_mul_mul_16s_15ns_31_4_1.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_mul_mul_16s_15ns_31_4_1' (11#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_mul_mul_16s_15ns_31_4_1.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_s' (12#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_s.v:10]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_Loop_real2xfft_output_proc3' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_real2xfft_output_proc3.v:10]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_regslice_both__parameterized0' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_regslice_both__parameterized0' (12#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_Loop_real2xfft_output_proc3' (13#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_Loop_real2xfft_output_proc3.v:10]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_fifo_w16_d256_A' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_fifo_w16_d256_A.v:50]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_fifo_w16_d256_A_ram' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_fifo_w16_d256_A.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_fifo_w16_d256_A_ram' (14#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_fifo_w16_d256_A.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_fifo_w16_d256_A' (15#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_fifo_w16_d256_A.v:50]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_fifo_w16_d512_A' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_fifo_w16_d512_A.v:50]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_fifo_w16_d512_A_ram' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_fifo_w16_d512_A.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_fifo_w16_d512_A_ram' (16#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_fifo_w16_d512_A.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_fifo_w16_d512_A' (17#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_fifo_w16_d512_A.v:50]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_start_for_Loop_sliding_win_output_proc2_U0' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_start_for_Loop_sliding_win_output_proc2_U0.v:42]
+INFO: [Synth 8-6157] synthesizing module 'hls_real2xfft_start_for_Loop_sliding_win_output_proc2_U0_shiftReg' [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_start_for_Loop_sliding_win_output_proc2_U0.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_start_for_Loop_sliding_win_output_proc2_U0_shiftReg' (18#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_start_for_Loop_sliding_win_output_proc2_U0.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft_start_for_Loop_sliding_win_output_proc2_U0' (19#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft_start_for_Loop_sliding_win_output_proc2_U0.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'hls_real2xfft' (20#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ipshared/12cc/hdl/verilog/hls_real2xfft.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'Zynq_RealFFT_hls_real2xfft_0_0' (21#1) [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ip/Zynq_RealFFT_hls_real2xfft_0_0/synth/Zynq_RealFFT_hls_real2xfft_0_0.v:58]
+WARNING: [Synth 8-7129] Port rst in module hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_cud is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module hls_real2xfft_window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_bkb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce0 in module hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:19 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:20 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:20 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.093 . Memory (MB): peak = 1444.930 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ip/Zynq_RealFFT_hls_real2xfft_0_0/constraints/hls_real2xfft_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.gen/sources_1/bd/Zynq_RealFFT/ip/Zynq_RealFFT_hls_real2xfft_0_0/constraints/hls_real2xfft_ooc.xdc] for cell 'inst'
+Parsing XDC File [C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.runs/Zynq_RealFFT_hls_real2xfft_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.runs/Zynq_RealFFT_hls_real2xfft_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1444.930 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.148 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:27 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:27 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.runs/Zynq_RealFFT_hls_real2xfft_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:27 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-3971] The signal "hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore:/ram_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:30 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   11 Bit       Adders := 3     
+	   2 Input   10 Bit       Adders := 2     
+	   2 Input    9 Bit       Adders := 7     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    2 Bit       Adders := 5     
+	   2 Input    1 Bit       Adders := 8     
++---XORs : 
+	   2 Input      1 Bit         XORs := 8     
++---Registers : 
+	               48 Bit    Registers := 2     
+	               16 Bit    Registers := 37    
+	               15 Bit    Registers := 6     
+	               10 Bit    Registers := 8     
+	                9 Bit    Registers := 18    
+	                8 Bit    Registers := 4     
+	                2 Bit    Registers := 11    
+	                1 Bit    Registers := 81    
++---RAMs : 
+	              16K Bit	(1024 X 16 bit)          RAMs := 4     
+	               7K Bit	(511 X 16 bit)          RAMs := 2     
+	               3K Bit	(255 X 16 bit)          RAMs := 2     
++---ROMs : 
+	                    ROMs := 2     
++---Muxes : 
+	   2 Input   48 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 3     
+	   2 Input   10 Bit        Muxes := 6     
+	   2 Input    9 Bit        Muxes := 10    
+	   2 Input    8 Bit        Muxes := 8     
+	   2 Input    2 Bit        Muxes := 13    
+	   4 Input    2 Bit        Muxes := 2     
+	   5 Input    2 Bit        Muxes := 2     
+	   6 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 61    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg, operation Mode is: (A''*B'')'.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/indata_0_load_reg_268_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/a_reg_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_tmp_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: operator window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_tmp0 is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U14/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: Generating DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg, operation Mode is: (A''*B'')'.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/indata_1_load_reg_278_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/a_reg_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_tmp_reg is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: operator window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_tmp0 is absorbed into DSP window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/mul_mul_16s_15ns_31_4_1_U15/hls_real2xfft_mul_mul_16s_15ns_31_4_1_DSP48_0_U/p_reg_reg.
+WARNING: [Synth 8-6014] Unused sequential element data2window_V_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element data2window_V_2_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element windowed_V_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element windowed_V_1_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg was removed. 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:36 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++--------------+-----------------------------------------------------------------------------------------------------------+---------------+----------------+
+|Module Name   | RTL Object                                                                                                | Depth x Width | Implemented As | 
++--------------+-----------------------------------------------------------------------------------------------------------+---------------+----------------+
+|hls_real2xfft | window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/coeff_tab_0_U/q0_t0_reg | 512x15        | Block RAM      | 
+|hls_real2xfft | window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/coeff_tab_1_U/q0_t0_reg | 512x15        | Block RAM      | 
++--------------+-----------------------------------------------------------------------------------------------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+-------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                                                                    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|inst        | data2window_V_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg   | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | data2window_V_2_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | windowed_V_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg      | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | windowed_V_1_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg    | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | delayed_V_U/U_hls_real2xfft_fifo_w16_d256_A_ram/mem_reg                       | 255 x 16(READ_FIRST)   | W |   | 255 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | nodelay_V_U/U_hls_real2xfft_fifo_w16_d512_A_ram/mem_reg                       | 511 x 16(READ_FIRST)   | W |   | 511 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | nodelay_V_1_U/U_hls_real2xfft_fifo_w16_d512_A_ram/mem_reg                     | 511 x 16(READ_FIRST)   | W |   | 511 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | delayed_V_1_U/U_hls_real2xfft_fifo_w16_d256_A_ram/mem_reg                     | 255 x 16(READ_FIRST)   | W |   | 255 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++------------+-------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|hls_real2xfft | (A''*B'')'  | 16     | 16     | -      | -      | 32     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|hls_real2xfft | (A''*B'')'  | 16     | 16     | -      | -      | 32     | 2    | 2    | -    | -    | -     | 1    | 1    | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:43 . Memory (MB): peak = 1444.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1457.766 ; gain = 12.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+-------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                                                                    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|inst        | data2window_V_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg   | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | data2window_V_2_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | windowed_V_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg      | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | windowed_V_1_U/hls_real2xfft_data2window_V_RAM_AUTO_2R1W_memcore_U/ram_reg    | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | delayed_V_U/U_hls_real2xfft_fifo_w16_d256_A_ram/mem_reg                       | 255 x 16(READ_FIRST)   | W |   | 255 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | nodelay_V_U/U_hls_real2xfft_fifo_w16_d512_A_ram/mem_reg                       | 511 x 16(READ_FIRST)   | W |   | 511 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | nodelay_V_1_U/U_hls_real2xfft_fifo_w16_d512_A_ram/mem_reg                     | 511 x 16(READ_FIRST)   | W |   | 511 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|inst        | delayed_V_1_U/U_hls_real2xfft_fifo_w16_d256_A_ram/mem_reg                     | 255 x 16(READ_FIRST)   | W |   | 255 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++------------+-------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1474.738 ; gain = 29.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:48 . Memory (MB): peak = 1474.738 ; gain = 29.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:48 . Memory (MB): peak = 1474.738 ; gain = 29.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:48 . Memory (MB): peak = 1474.738 ; gain = 29.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:48 . Memory (MB): peak = 1474.738 ; gain = 29.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:48 . Memory (MB): peak = 1474.738 ; gain = 29.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:48 . Memory (MB): peak = 1474.738 ; gain = 29.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name   | RTL Name                                                                                                                                                          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|hls_real2xfft | Loop_sliding_win_delay_proc1_U0/delay_line_Array_U/hls_real2xfft_Loop_sliding_win_delay_proc1_delay_line_Array_SHIFTREG_AUTO_0R0W_core_U/ShiftRegMem_reg[511][15] | 512    | 16    | NO           | NO                 | NO                | 0      | 256     | 
+|hls_real2xfft | window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/zext_ln1169_reg_228_pp0_iter6_reg_reg[8]                                        | 5      | 9     | NO           | NO                 | YES               | 9      | 0       | 
+|hls_real2xfft | window_fn_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_3_0_ap_fixed_16_1_5_0_0_1024_2_2_U0/tmp_reg_259_pp0_iter6_reg_reg[0]                                                | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+
+Dynamic Shift Register Report:
++------------+----------------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name             | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+----------------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | ShiftRegMem_reg[511] | 16     | 16         | 0      | 256     | 128    | 64     | 0      | 
++------------+----------------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    10|
+|2     |DSP48E1  |     2|
+|3     |LUT1     |    11|
+|4     |LUT2     |    48|
+|5     |LUT3     |   108|
+|6     |LUT4     |    59|
+|7     |LUT5     |   126|
+|8     |LUT6     |   149|
+|9     |RAMB18E1 |    10|
+|12    |SRL16E   |    10|
+|13    |SRLC32E  |   256|
+|14    |FDRE     |   558|
+|15    |FDSE     |    10|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 1474.738 ; gain = 29.809
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:46 . Memory (MB): peak = 1474.738 ; gain = 29.809
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:49 . Memory (MB): peak = 1474.738 ; gain = 29.809
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1483.293 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1486.945 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: e987bf62
+INFO: [Common 17-83] Releasing license: Synthesis
+70 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:54 . Memory (MB): peak = 1486.945 ; gain = 42.016
+INFO: [Common 17-1381] The checkpoint 'C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.runs/Zynq_RealFFT_hls_real2xfft_0_0_synth_1/Zynq_RealFFT_hls_real2xfft_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Zynq_RealFFT_hls_real2xfft_0_0, cache-ID = 82e4d79690c4ef1d
+INFO: [Coretcl 2-1174] Renamed 32 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/wdb87/Documents/LabA/Using_IP_with_Zynq/lab2/project_1/project_1.runs/Zynq_RealFFT_hls_real2xfft_0_0_synth_1/Zynq_RealFFT_hls_real2xfft_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Zynq_RealFFT_hls_real2xfft_0_0_utilization_synth.rpt -pb Zynq_RealFFT_hls_real2xfft_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 26 22:13:05 2022...

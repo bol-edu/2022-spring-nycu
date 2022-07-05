@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Jun 22 01:13:06 2022
+# Process ID: 1458391
+# Current directory: /home/joinet/HLS/final_project/final_project.runs/design_1_auto_ds_1_synth_1
+# Command line: vivado -log design_1_auto_ds_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_auto_ds_1.tcl
+# Log file: /home/joinet/HLS/final_project/final_project.runs/design_1_auto_ds_1_synth_1/design_1_auto_ds_1.vds
+# Journal file: /home/joinet/HLS/final_project/final_project.runs/design_1_auto_ds_1_synth_1/vivado.jou
+# Running On: buyatti, OS: Linux, CPU Frequency: 4463.121 MHz, CPU Physical cores: 24, Host memory: 67338 MB
+#-----------------------------------------------------------
+source design_1_auto_ds_1.tcl -notrace

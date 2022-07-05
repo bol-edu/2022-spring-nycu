@@ -1,0 +1,11 @@
+
+#####################AXI4-Stream Master ################
+BUS_INTERFACE BUS = dout, BUS_STD = AXIS, BUS_TYPE = INITIATOR
+## Generics for VHDL or Parameters for Verilog
+PARAMETER C_dout_PROTOCOL = GENERIC, DT = STRING, TYPE = NON_HDL, BUS = dout
+## Ports
+PORT dout_TDATA = TDATA, DIR = O, VEC = [47:0], BUS = dout
+PORT dout_TVALID = TVALID, DIR = O, BUS = dout
+PORT dout_TREADY = TREADY, DIR = I, BUS = dout
+########################################################
+
